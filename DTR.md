@@ -12,21 +12,21 @@ Kate
 Project Expectations: What does each group member hope to get out of this project? 
 ```
 Harper: To develop even stronger backend skills, and explore new backend technologies
-Joel:
+Joel: To develop stronger collaboration skills
 Jordan:
 Kate:
 ```
 Goals and expectations:
 ```
 Harper: To learn as much as possible about linking frontend and backend projects; To develop even better git workflow skills
-Joel:
+Joel: To get more practice linking seperate frontend and backend sections, and have a great project to add to work experience
 Jordan:
 Kate:
 ```
 Team strengths:
 ```
 Harper: Organized, Goal Oriented
-Joel:
+Joel: Detail oriented, organized
 Jordan:
 Kate:
 ```
@@ -34,7 +34,7 @@ Kate:
 How to overcome obstacles:
 ```
 Harper:
-Joel:
+Joel: Share project challenges with group and resolve together
 Jordan:
 Kate:
 ```
@@ -42,7 +42,7 @@ Kate:
 Schedule Expectations (When are we available to work together and individually?):
 ```
 Harper:
-Joel:
+Joel: Can stay till 7 but can also stay later than that if necessary, mornings don't really work
 Jordan:
 Kate:
 ```
@@ -50,7 +50,7 @@ Kate:
 Communication Expectations (How and often will we communicate? How do we keep lines of communication open?):
 ```
 Harper:
-Joel:
+Joel: Slack messages
 Jordan:
 Kate:
 ```
@@ -58,7 +58,7 @@ Kate:
 Abilities Expectations (Technical strengths and areas for desired improvement):
 ```
 Harper:
-Joel:
+Joel: Strengths: React and React component structure, CSS     Improvement: project organization, Git workflow
 Jordan:
 Kate:
 ```
@@ -66,7 +66,7 @@ Kate:
 Workload Expectations (What features do we each want to work on?):
 ```
 Harper:
-Joel:
+Joel: React
 Jordan:
 Kate:
 ```
@@ -74,7 +74,7 @@ Kate:
 Workflow Expectations (Git workflow/Tools/Code Review/Reviewing Pull Requests): 
 ```
 Harper:
-Joel:
+Joel: frequent commits and good review comments
 Jordan:
 Kate:
 ```
@@ -82,7 +82,7 @@ Kate:
 Expectations for giving and receiving feedback:
 ```
 Harper:
-Joel:
+Joel: Clear, honest and kind
 Jordan:
 Kate:
 ```
@@ -93,7 +93,7 @@ Agenda to discuss project launch:
 Student Goal:
 ```
 Harper:
-Joel:
+Joel: Well-rounded project for resume
 Jordan:
 Kate:
 ```
