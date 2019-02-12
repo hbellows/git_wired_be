@@ -6,6 +6,7 @@
 # Inital Setup
 # How To Use 
 # Running Tests
+# Endpoints
 # Dependencies
 # Contributing
 GitWired is an open source project. We invite your participation through issues and pull requests! 
