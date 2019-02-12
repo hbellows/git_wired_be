@@ -3,7 +3,9 @@
 <!-- [![Build Status](https://travis-ci.org/hbellows/rain_or_shine.svg?branch=master)](https://travis-ci.org/hbellows/rain_or_shine)
 [![codecov.io](https://codecov.io/gh/hbellows/rain_or_shine/branch/master/graph/badge.svg)](https://codecov.io/gh/hbellows/rain_or_shine) -->
 # About This Project
-This API application contains endpoints that can be consummed by a frontend application to help developers track frontend functionality creation and completion by matching their github issues to an customizable, animated wireframe.  The user can specify wireframe elements and link them to the corresponding github issue.  The wireframe element will then change shade based on the issue's status as it progresses through development (ie, "To Do", "In Progress", and "Done")
+This API application contains endpoints that can be consummed by a frontend application to help developers track frontend functionality creation and completion by matching their github issues to an customizable, animated wireframe.  The user can specify wireframe elements and link them to the corresponding github issue.  The wireframe element will then change shade based on the issue's status as it progresses through development (ie, "To Do", "In Progress", and "Done").
+
+View this application's progess by visiting it's [project board](https://github.com/hbellows/git_wired_be/projects/1).
 
 ## System Requirements
 Please note: This application uses GitHub for Oauth, so you'll likely need to grab your own GitHub developer keys prior to using this application.
@@ -24,6 +26,7 @@ More information about GitHub developer keys can be found in the [GitHub develop
 4. Add the following API keys to config/application.yml with the variable names exactly as shown:
    - `GITHUB_API_KEY`
 5. Run `rails db:{create,migrate,seed}` in the project folder.
+6.
 
 # How To Use 
 These are the endpoints that are currently available in the application:
