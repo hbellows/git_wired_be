@@ -14,9 +14,7 @@ More information about GitHub developer keys can be found in the [GitHub develop
 
  - Ruby >= 2.4.0
  - Rails >= 5.1.6
- - Your own Google API key
- - Your own Dark Sky API key
- - Your own Giphy API key
+ - Your own GitHub API key
  - Please see the following section for instructions on handling personal api keys.
 
 # Inital Setup
