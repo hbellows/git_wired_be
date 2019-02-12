@@ -3,10 +3,33 @@
 <!-- [![Build Status](https://travis-ci.org/hbellows/rain_or_shine.svg?branch=master)](https://travis-ci.org/hbellows/rain_or_shine)
 [![codecov.io](https://codecov.io/gh/hbellows/rain_or_shine/branch/master/graph/badge.svg)](https://codecov.io/gh/hbellows/rain_or_shine) -->
 # About This Project
+This API application contains endpoints that can be consummed by a frontend application to help developers track frontend functionality creation and completion by matching their github issues to an customizable, animated wireframe.  The user can specify wireframe elements and link them to the corresponding github issue.  The wireframe element will then change shade based on the issue's status as it progresses through development (ie, "To Do", "In Progress", and "Done")
+
+## System Requirements
+Please note: This application uses GitHub for Oauth, so you'll likely need to grab your own GitHub developer keys prior to using this application.
+
+More information about GitHub developer keys can be found in the [GitHub developer docs](https://developer.github.com/v3/).
+
+ - Ruby >= 2.4.0
+ - Rails >= 5.1.6
+ - Your own Google API key
+ - Your own Dark Sky API key
+ - Your own Giphy API key
+ - Please see the following section for instructions on handling personal api keys.
+
 # Inital Setup
+1. Clone or fork this project to your local machine.
+2. Run `bundle` in the project folder.
+3. Run `figaro install` in the project folder.
+4. Add the following API keys to config/application.yml with the variable names exactly as shown:
+   - `GITHUB_API_KEY`
+5. Run `rails db:{create,migrate,seed}` in the project folder.
+
 # How To Use 
+These are the endpoints that are currently available in the application:
+### Elements
 # Running Tests
-# Endpoints
+Run `rspec` to run the full test suite, or `rails server` to load up the application.
 # Dependencies
 # Contributing
 GitWired is an open source project. We invite your participation through issues and pull requests! 
@@ -14,13 +37,13 @@ GitWired is an open source project. We invite your participation through issues 
 When adding or changing a service please add tests.
 
 Issues needing additional support:
-- Issue 1
-- Issue 2
+- Issue 1 Placeholder
+- Issue 2 Placeholder
 
 # Related Projects
-The GitWired frontend application is a JavaScript/React application that consummes the endpoints provided in this API.
 
 More information about GitWiredFe can be found [here](https://github.com/JoelSmith123/git_wired_fe).
+The GitWired frontend application is a JavaScript/React application that consummes the endpoints provided in this API.  
 
 # Schema
 ![Schema](Schema.png)
@@ -31,3 +54,7 @@ This is a Capstone project for students wrapping up their studies at the Turing 
 Contributors to the backend application are [Harper Bellows](@hbellows) and [Jordan Whitten](@jordanwa1947).
 
 Contributors to the frontend application are [Kate Rimkunas](@kate-v2) and [Joel Smith](@joelsmith123)
+
+More information about the entire project can be found [here](http://backend.turing.io/module4/projects/cross_pollination/cross_pollination_spec).
+
+More information about Turing School can be found [here](https://turing.io/).
