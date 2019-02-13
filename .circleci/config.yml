@@ -17,7 +17,7 @@ jobs:
     steps:
       - checkout
 
-      Restore Cached Dependencies
+      #Restore Cached Dependencies
       - type: cache-restore
         name: Restore bundle cache
         key: git_wired_be-{{ checksum "Gemfile.lock" }}
@@ -25,7 +25,7 @@ jobs:
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
 
-      Cache Dependencies
+      #Cache Dependencies
       - type: cache-save
         name: Store bundle cache
         key: git_wired_be-{{ checksum "Gemfile.lock" }}
