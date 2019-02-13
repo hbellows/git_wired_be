@@ -1,0 +1,17 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/harperbellows/turing/4module/git_wired_be/app/controllers/welcome_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/harperbellows/turing/4module/git_wired_be/app/controllers/application_controller.rb": [
+        1,
+        null
+      ]
+    },
+    "timestamp": 1550068765
+  }
+}
