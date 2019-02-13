@@ -1,4 +1,4 @@
-class Api::V1::GithubController < ApiController
+class Api::V1::ProjectsController < ApiController
 
   def show
     render json: ProjectSerializer.new(project).serialized_json
