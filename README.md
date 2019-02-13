@@ -1,24 +1,61 @@
-# README
+<!-- ![alt text](https://img.shields.io/badge/ruby-2.4.0-red.svg "Ruby")
+![alt text](https://img.shields.io/badge/rails-5.1.6-red.svg "Ruby on Rails") -->
+<!-- [![Build Status](https://travis-ci.org/hbellows/rain_or_shine.svg?branch=master)](https://travis-ci.org/hbellows/rain_or_shine)
+[![codecov.io](https://codecov.io/gh/hbellows/rain_or_shine/branch/master/graph/badge.svg)](https://codecov.io/gh/hbellows/rain_or_shine) -->
+# About This Project
+This API application contains endpoints that can be consummed by a frontend application to help developers track frontend functionality creation and completion by matching their github issues to an customizable, animated wireframe.  The user can specify wireframe elements and link them to the corresponding github issue.  The wireframe element will then change shade based on the issue's status as it progresses through development (ie, "To Do", "In Progress", and "Done").
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+View this application's progess by visiting it's [project board](https://github.com/hbellows/git_wired_be/projects/1).
 
-Things you may want to cover:
+## System Requirements
+Please note: This application uses GitHub for Oauth, so you'll likely need to grab your own GitHub developer keys prior to using this application.
 
-* Ruby version
+More information about GitHub developer keys can be found in the [GitHub developer docs](https://developer.github.com/v3/).
 
-* System dependencies
+ - Ruby >= 2.4.0
+ - Rails >= 5.1.6
+ - Your own GitHub API key
+ - Please see the following section for instructions on handling personal api keys.
 
-* Configuration
+# Inital Setup
+1. Clone or fork this project to your local machine.
+2. Run `bundle` in the project folder.
+3. Run `figaro install` in the project folder.
+4. Add the following API keys to config/application.yml with the variable names exactly as shown:
+   - `GITHUB_API_KEY`
+5. Run `rails db:{create,migrate,seed}` in the project folder.
+6.
 
-* Database creation
+# How To Use 
+These are the endpoints that are currently available in the application:
+### Elements
+# Running Tests
+Run `rspec` to run the full test suite, or `rails server` to load up the application.
+# Dependencies
+# Contributing
+GitWired is an open source project. We invite your participation through issues and pull requests! 
 
-* Database initialization
+When adding or changing a service please add tests.
 
-* How to run the test suite
+Issues needing additional support:
+- Issue 1 Placeholder
+- Issue 2 Placeholder
 
-* Services (job queues, cache servers, search engines, etc.)
+# Related Projects
 
-* Deployment instructions
+More information about GitWiredFe can be found [here](https://github.com/JoelSmith123/git_wired_fe).
+The GitWired frontend application is a JavaScript/React application that consummes the endpoints provided in this API.  
 
-* ...
+# Schema
+![Schema](Schema.png)
+
+# Contributors
+This is a Capstone project for students wrapping up their studies at the Turing School of Software and Design.  The entire project consists of a backend Rails API application that provides endpoints for a JavaScript/React frontend application to consume.
+
+Contributors to the backend application are [Harper Bellows](@hbellows) and [Jordan Whitten](@jordanwa1947).
+
+Contributors to the frontend application are [Kate Rimkunas](@kate-v2) and [Joel Smith](@joelsmith123)
+
+More information about the entire project can be found [here](http://backend.turing.io/module4/projects/cross_pollination/cross_pollination_spec).
+
+More information about Turing School can be found [here](https://turing.io/).
