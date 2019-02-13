@@ -20,7 +20,7 @@ jobs:
       # Restore Cached Dependencies
       - type: cache-restore
         name: Restore bundle cache
-        key: your-app-name-{{ checksum "Gemfile.lock" }}
+        key: git_wired-{{ checksum "Gemfile.lock" }}
 
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
@@ -28,15 +28,15 @@ jobs:
       # Cache Dependencies
       - type: cache-save
         name: Store bundle cache
-        key: your-app-name-{{ checksum "Gemfile.lock" }}
+        key: git_wired-{{ checksum "Gemfile.lock" }}
         paths:
           - vendor/bundle
 
       # Wait for DB
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
 
-      # Setup the environment
-      - run: cp .sample.env .env
+      # # Setup the environment
+      # - run: cp .sample.env .env
 
       # Setup the database
       - run: bundle exec rake db:setup
