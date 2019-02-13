@@ -11,6 +11,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faraday'
 gem 'figaro'
 gem 'fast_jsonapi'
+<<<<<<< HEAD
+=======
+# gem 'bcrypt', '~> 3.1.7'
+>>>>>>> da7c3ae7f86098bc7624a4cda04b2ea6391c1b00
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
