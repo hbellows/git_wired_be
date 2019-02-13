@@ -1,0 +1,25 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/harperbellows/turing/4module/git_wired_be/app/controllers/welcome_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/harperbellows/turing/4module/git_wired_be/app/controllers/application_controller.rb": [
+        1,
+        null
+      ]
+    },
+<<<<<<< HEAD
+<<<<<<< HEAD
+    "timestamp": 1550072400
+=======
+    "timestamp": 1550068765
+>>>>>>> da7c3ae7f86098bc7624a4cda04b2ea6391c1b00
+=======
+    "timestamp": 1550068765
+>>>>>>> da7c3ae7f86098bc7624a4cda04b2ea6391c1b00
+  }
+}

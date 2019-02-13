@@ -12,7 +12,6 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-development:
   <<: *default
   database: git_wired_development
 
