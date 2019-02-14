@@ -13,6 +13,7 @@ describe GithubService do
       # VCR.use_cassette('project_data') do
         response = subject.project_data('hbellows')
 
+        binding.pry
         expect(response).to be_a(Hash)
         # expect(response).to have_key(:results)
         # expect(response[:results]).to be_a(Array)
