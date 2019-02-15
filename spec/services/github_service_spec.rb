@@ -27,6 +27,7 @@ describe GithubService do
     it 'returns #find_repo_projects' do
       VCR.use_cassette('find_repo_projects') do
         response = subject.find_repo_projects('hbellows', 'git_wired_be')
+
         expect(response).to be_a(Array)
         expect(response[0][:id]).to be_a(Integer)
         expect(response[0][:name]).to be_a(String)
