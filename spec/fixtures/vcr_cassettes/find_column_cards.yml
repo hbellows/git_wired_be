@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/projects/columns/4407129/cards
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.inertia-preview+json
+      Authorization:
+      - token <GITHUB API KEY>
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 15 Feb 2019 13:45:51 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4995'
+      X-Ratelimit-Reset:
+      - '1550241787'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      Etag:
+      - W/"8af0c5c10365315ac516add3e9b015d1"
+      X-Oauth-Scopes:
+      - admin:business, admin:gpg_key, admin:org, admin:org_hook, admin:public_key,
+        admin:repo_hook, delete_repo, gist, notifications, repo, user, write:discussion
+      X-Accepted-Oauth-Scopes:
+      - public_repo, repo
+      X-Github-Media-Type:
+      - github.inertia-preview; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
+        X-GitHub-Media-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - FCF8:4FE3:49A434:C8FE40:5C66C28E
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"url":"https://api.github.com/projects/columns/cards/17625549","project_url":"https://api.github.com/projects/2166821","id":17625549,"node_id":"MDExOlByb2plY3RDYXJkMTc2MjU1NDk=","note":null,"archived":false,"creator":{"login":"hbellows","id":35637783,"node_id":"MDQ6VXNlcjM1NjM3Nzgz","avatar_url":"https://avatars2.githubusercontent.com/u/35637783?v=4","gravatar_id":"","url":"https://api.github.com/users/hbellows","html_url":"https://github.com/hbellows","followers_url":"https://api.github.com/users/hbellows/followers","following_url":"https://api.github.com/users/hbellows/following{/other_user}","gists_url":"https://api.github.com/users/hbellows/gists{/gist_id}","starred_url":"https://api.github.com/users/hbellows/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/hbellows/subscriptions","organizations_url":"https://api.github.com/users/hbellows/orgs","repos_url":"https://api.github.com/users/hbellows/repos","events_url":"https://api.github.com/users/hbellows/events{/privacy}","received_events_url":"https://api.github.com/users/hbellows/received_events","type":"User","site_admin":false},"created_at":"2019-02-13T19:15:16Z","updated_at":"2019-02-13T19:15:16Z","column_url":"https://api.github.com/projects/columns/4407129","content_url":"https://api.github.com/repos/hbellows/git_wired_be/issues/16"},{"url":"https://api.github.com/projects/columns/cards/17625434","project_url":"https://api.github.com/projects/2166821","id":17625434,"node_id":"MDExOlByb2plY3RDYXJkMTc2MjU0MzQ=","note":null,"archived":false,"creator":{"login":"hbellows","id":35637783,"node_id":"MDQ6VXNlcjM1NjM3Nzgz","avatar_url":"https://avatars2.githubusercontent.com/u/35637783?v=4","gravatar_id":"","url":"https://api.github.com/users/hbellows","html_url":"https://github.com/hbellows","followers_url":"https://api.github.com/users/hbellows/followers","following_url":"https://api.github.com/users/hbellows/following{/other_user}","gists_url":"https://api.github.com/users/hbellows/gists{/gist_id}","starred_url":"https://api.github.com/users/hbellows/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/hbellows/subscriptions","organizations_url":"https://api.github.com/users/hbellows/orgs","repos_url":"https://api.github.com/users/hbellows/repos","events_url":"https://api.github.com/users/hbellows/events{/privacy}","received_events_url":"https://api.github.com/users/hbellows/received_events","type":"User","site_admin":false},"created_at":"2019-02-13T19:12:50Z","updated_at":"2019-02-13T19:12:50Z","column_url":"https://api.github.com/projects/columns/4407129","content_url":"https://api.github.com/repos/hbellows/git_wired_be/issues/15"},{"url":"https://api.github.com/projects/columns/cards/17561802","project_url":"https://api.github.com/projects/2166821","id":17561802,"node_id":"MDExOlByb2plY3RDYXJkMTc1NjE4MDI=","note":null,"archived":false,"creator":{"login":"hbellows","id":35637783,"node_id":"MDQ6VXNlcjM1NjM3Nzgz","avatar_url":"https://avatars2.githubusercontent.com/u/35637783?v=4","gravatar_id":"","url":"https://api.github.com/users/hbellows","html_url":"https://github.com/hbellows","followers_url":"https://api.github.com/users/hbellows/followers","following_url":"https://api.github.com/users/hbellows/following{/other_user}","gists_url":"https://api.github.com/users/hbellows/gists{/gist_id}","starred_url":"https://api.github.com/users/hbellows/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/hbellows/subscriptions","organizations_url":"https://api.github.com/users/hbellows/orgs","repos_url":"https://api.github.com/users/hbellows/repos","events_url":"https://api.github.com/users/hbellows/events{/privacy}","received_events_url":"https://api.github.com/users/hbellows/received_events","type":"User","site_admin":false},"created_at":"2019-02-12T14:13:11Z","updated_at":"2019-02-12T14:13:11Z","column_url":"https://api.github.com/projects/columns/4407129","content_url":"https://api.github.com/repos/hbellows/git_wired_be/issues/6"},{"url":"https://api.github.com/projects/columns/cards/17561803","project_url":"https://api.github.com/projects/2166821","id":17561803,"node_id":"MDExOlByb2plY3RDYXJkMTc1NjE4MDM=","note":null,"archived":false,"creator":{"login":"hbellows","id":35637783,"node_id":"MDQ6VXNlcjM1NjM3Nzgz","avatar_url":"https://avatars2.githubusercontent.com/u/35637783?v=4","gravatar_id":"","url":"https://api.github.com/users/hbellows","html_url":"https://github.com/hbellows","followers_url":"https://api.github.com/users/hbellows/followers","following_url":"https://api.github.com/users/hbellows/following{/other_user}","gists_url":"https://api.github.com/users/hbellows/gists{/gist_id}","starred_url":"https://api.github.com/users/hbellows/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/hbellows/subscriptions","organizations_url":"https://api.github.com/users/hbellows/orgs","repos_url":"https://api.github.com/users/hbellows/repos","events_url":"https://api.github.com/users/hbellows/events{/privacy}","received_events_url":"https://api.github.com/users/hbellows/received_events","type":"User","site_admin":false},"created_at":"2019-02-12T14:13:14Z","updated_at":"2019-02-12T21:37:42Z","column_url":"https://api.github.com/projects/columns/4407129","content_url":"https://api.github.com/repos/hbellows/git_wired_be/issues/7"},{"url":"https://api.github.com/projects/columns/cards/17561808","project_url":"https://api.github.com/projects/2166821","id":17561808,"node_id":"MDExOlByb2plY3RDYXJkMTc1NjE4MDg=","note":null,"archived":false,"creator":{"login":"hbellows","id":35637783,"node_id":"MDQ6VXNlcjM1NjM3Nzgz","avatar_url":"https://avatars2.githubusercontent.com/u/35637783?v=4","gravatar_id":"","url":"https://api.github.com/users/hbellows","html_url":"https://github.com/hbellows","followers_url":"https://api.github.com/users/hbellows/followers","following_url":"https://api.github.com/users/hbellows/following{/other_user}","gists_url":"https://api.github.com/users/hbellows/gists{/gist_id}","starred_url":"https://api.github.com/users/hbellows/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/hbellows/subscriptions","organizations_url":"https://api.github.com/users/hbellows/orgs","repos_url":"https://api.github.com/users/hbellows/repos","events_url":"https://api.github.com/users/hbellows/events{/privacy}","received_events_url":"https://api.github.com/users/hbellows/received_events","type":"User","site_admin":false},"created_at":"2019-02-12T14:13:17Z","updated_at":"2019-02-12T14:13:17Z","column_url":"https://api.github.com/projects/columns/4407129","content_url":"https://api.github.com/repos/hbellows/git_wired_be/issues/8"},{"url":"https://api.github.com/projects/columns/cards/17561809","project_url":"https://api.github.com/projects/2166821","id":17561809,"node_id":"MDExOlByb2plY3RDYXJkMTc1NjE4MDk=","note":null,"archived":false,"creator":{"login":"hbellows","id":35637783,"node_id":"MDQ6VXNlcjM1NjM3Nzgz","avatar_url":"https://avatars2.githubusercontent.com/u/35637783?v=4","gravatar_id":"","url":"https://api.github.com/users/hbellows","html_url":"https://github.com/hbellows","followers_url":"https://api.github.com/users/hbellows/followers","following_url":"https://api.github.com/users/hbellows/following{/other_user}","gists_url":"https://api.github.com/users/hbellows/gists{/gist_id}","starred_url":"https://api.github.com/users/hbellows/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/hbellows/subscriptions","organizations_url":"https://api.github.com/users/hbellows/orgs","repos_url":"https://api.github.com/users/hbellows/repos","events_url":"https://api.github.com/users/hbellows/events{/privacy}","received_events_url":"https://api.github.com/users/hbellows/received_events","type":"User","site_admin":false},"created_at":"2019-02-12T14:13:20Z","updated_at":"2019-02-12T14:13:20Z","column_url":"https://api.github.com/projects/columns/4407129","content_url":"https://api.github.com/repos/hbellows/git_wired_be/issues/9"},{"url":"https://api.github.com/projects/columns/cards/17562127","project_url":"https://api.github.com/projects/2166821","id":17562127,"node_id":"MDExOlByb2plY3RDYXJkMTc1NjIxMjc=","note":null,"archived":false,"creator":{"login":"hbellows","id":35637783,"node_id":"MDQ6VXNlcjM1NjM3Nzgz","avatar_url":"https://avatars2.githubusercontent.com/u/35637783?v=4","gravatar_id":"","url":"https://api.github.com/users/hbellows","html_url":"https://github.com/hbellows","followers_url":"https://api.github.com/users/hbellows/followers","following_url":"https://api.github.com/users/hbellows/following{/other_user}","gists_url":"https://api.github.com/users/hbellows/gists{/gist_id}","starred_url":"https://api.github.com/users/hbellows/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/hbellows/subscriptions","organizations_url":"https://api.github.com/users/hbellows/orgs","repos_url":"https://api.github.com/users/hbellows/repos","events_url":"https://api.github.com/users/hbellows/events{/privacy}","received_events_url":"https://api.github.com/users/hbellows/received_events","type":"User","site_admin":false},"created_at":"2019-02-12T14:20:24Z","updated_at":"2019-02-12T14:21:20Z","column_url":"https://api.github.com/projects/columns/4407129","content_url":"https://api.github.com/repos/hbellows/git_wired_be/issues/11"},{"url":"https://api.github.com/projects/columns/cards/17562145","project_url":"https://api.github.com/projects/2166821","id":17562145,"node_id":"MDExOlByb2plY3RDYXJkMTc1NjIxNDU=","note":null,"archived":false,"creator":{"login":"hbellows","id":35637783,"node_id":"MDQ6VXNlcjM1NjM3Nzgz","avatar_url":"https://avatars2.githubusercontent.com/u/35637783?v=4","gravatar_id":"","url":"https://api.github.com/users/hbellows","html_url":"https://github.com/hbellows","followers_url":"https://api.github.com/users/hbellows/followers","following_url":"https://api.github.com/users/hbellows/following{/other_user}","gists_url":"https://api.github.com/users/hbellows/gists{/gist_id}","starred_url":"https://api.github.com/users/hbellows/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/hbellows/subscriptions","organizations_url":"https://api.github.com/users/hbellows/orgs","repos_url":"https://api.github.com/users/hbellows/repos","events_url":"https://api.github.com/users/hbellows/events{/privacy}","received_events_url":"https://api.github.com/users/hbellows/received_events","type":"User","site_admin":false},"created_at":"2019-02-12T14:20:45Z","updated_at":"2019-02-12T14:21:14Z","column_url":"https://api.github.com/projects/columns/4407129","content_url":"https://api.github.com/repos/hbellows/git_wired_be/issues/10"},{"url":"https://api.github.com/projects/columns/cards/17564930","project_url":"https://api.github.com/projects/2166821","id":17564930,"node_id":"MDExOlByb2plY3RDYXJkMTc1NjQ5MzA=","note":null,"archived":false,"creator":{"login":"hbellows","id":35637783,"node_id":"MDQ6VXNlcjM1NjM3Nzgz","avatar_url":"https://avatars2.githubusercontent.com/u/35637783?v=4","gravatar_id":"","url":"https://api.github.com/users/hbellows","html_url":"https://github.com/hbellows","followers_url":"https://api.github.com/users/hbellows/followers","following_url":"https://api.github.com/users/hbellows/following{/other_user}","gists_url":"https://api.github.com/users/hbellows/gists{/gist_id}","starred_url":"https://api.github.com/users/hbellows/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/hbellows/subscriptions","organizations_url":"https://api.github.com/users/hbellows/orgs","repos_url":"https://api.github.com/users/hbellows/repos","events_url":"https://api.github.com/users/hbellows/events{/privacy}","received_events_url":"https://api.github.com/users/hbellows/received_events","type":"User","site_admin":false},"created_at":"2019-02-12T15:17:01Z","updated_at":"2019-02-13T13:14:04Z","column_url":"https://api.github.com/projects/columns/4407129","content_url":"https://api.github.com/repos/hbellows/git_wired_be/issues/12"}]'
+    http_version: 
+  recorded_at: Fri, 15 Feb 2019 13:45:49 GMT
+recorded_with: VCR 4.0.0

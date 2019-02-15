@@ -1,22 +1,22 @@
 class GithubService
 
-  def repo_data(login)
+  def find_repos(login)
     get_json("/users/#{login}/repos?sort=updated")
   end
   
-  def repo_projects(login, repo)
+  def find_repo_projects(login, repo)
     get_json("/repos/#{login}/#{repo}/projects")
   end
   
-  def project_columns(project_id)
+  def find_project_columns(project_id)
     get_json("/projects/#{project_id}/columns")
   end
 
-  def project_cards(column_id)
+  def find_column_cards(column_id)
     get_json("/projects/columns/#{column_id}/cards")
   end
 
-  def card_data(card_id)
+  def find_card(card_id)
     get_json("/projects/columns/cards/#{card_id}")
   end
 

@@ -9,10 +9,10 @@ describe GithubService do
   end
   
   context 'Instance Methods' do
-    it 'returns #repo_data' do
-      VCR.use_cassette('repo_data') do
-        response = subject.repo_data('hbellows')
-  
+    it 'returns #find_repos' do
+      VCR.use_cassette('find_repos') do
+        response = subject.find_repos('hbellows')
+
         expect(response).to be_a(Array)
         expect(response[0][:id]).to be_a(Integer)
         expect(response[0][:name]).to be_a(String)
@@ -24,9 +24,9 @@ describe GithubService do
       end
     end
 
-    it 'returns #repo_projects' do
-      VCR.use_cassette('repo_projects') do
-        response = subject.repo_projects('hbellows', 'git_wired_be')
+    it 'returns #find_repo_projects' do
+      VCR.use_cassette('find_repo_projects') do
+        response = subject.find_repo_projects('hbellows', 'git_wired_be')
         expect(response).to be_a(Array)
         expect(response[0][:id]).to be_a(Integer)
         expect(response[0][:name]).to be_a(String)
@@ -37,9 +37,9 @@ describe GithubService do
       end
     end
     
-    it 'returns #project_columns' do
-      VCR.use_cassette('project_columns') do
-        response = subject.project_columns(2166821)
+    it 'returns #find_project_columns' do
+      VCR.use_cassette('find_project_columns') do
+        response = subject.find_project_columns(2166821)
       
         expect(response).to be_a(Array)
         expect(response[0][:id]).to be_a(Integer)
@@ -48,18 +48,18 @@ describe GithubService do
       end
     end
 
-    it 'returns #project_cards' do
-      VCR.use_cassette('project_cards') do
-        response = subject.project_cards(4407129)
+    it 'returns #find_column_cards' do
+      VCR.use_cassette('find_column_cards') do
+        response = subject.find_column_cards(4407129)
 
         expect(response).to be_a(Array)
         expect(response[0][:id]).to be_a(Integer)
       end
     end
 
-    it 'returns #card_data' do
-      VCR.use_cassette('card_data') do
-        response = subject.card_data(17625549)
+    it 'returns #find_card' do
+      VCR.use_cassette('find_card') do
+        response = subject.find_card(17625549)
 
         expect(response).to be_a(Hash)
         expect(response[:id]).to be_a(Integer)
