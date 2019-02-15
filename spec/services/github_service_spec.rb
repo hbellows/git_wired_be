@@ -24,13 +24,18 @@ describe GithubService do
       end
     end
 
-    xit 'returns #repo_projects' do
-      # VCR.use_cassette('repo_projects') do
+    it 'returns #repo_projects' do
+      VCR.use_cassette('repo_projects') do
         response = subject.repo_projects('hbellows', 'git_wired_be')
 
-        binding.pry
         expect(response).to be_a(Array)
-      # end
+        expect(response[0][:id]).to be_a(Integer)
+        expect(response[0][:name]).to be_a(String)
+        expect(response[0][:state]).to be_a(String)
+        expect(response[0][:creator][:login]).to be_a(String)
+        expect(response[0][:creator][:id]).to be_a(Integer)
+        expect(response[0][:updated_at]).to be_a(String)
+      end
     end
 
     # it 'returns #project_data' do
