@@ -17,9 +17,7 @@ VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :webmock
   config.allow_http_connections_when_no_cassette = true
-  config.filter_sensitive_data('<YOUR GOOGLE API KEY HERE>') { ENV['google_api_key'] }
-  config.filter_sensitive_data('<YOUR DARK SKY API KEY HERE>') { ENV['dark_sky_api_key'] }
-  config.filter_sensitive_data('<YOUR GIPHY API KEY HERE>') { ENV['giphy_api_key'] }
+  config.filter_sensitive_data('<GITHUB API KEY>') { ENV['GITHUB_API_KEY'] }
 end
 
 begin
