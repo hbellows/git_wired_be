@@ -24,22 +24,22 @@ class ProjectFinder
   end
 
   def repos_data
-    github_service.find_repos(@login)
+    @repo_data ||= github_service.find_repos(@login)
   end
 
   def repo_projects_data
-    github_service.find_repo_projects(login, repo)
+    @repo_projects_data ||= github_service.find_repo_projects(login, repo)
   end
 
   def project_columns_data
-    github_service.find_project_columns(project_id)
+    @project_columns_data ||= github_service.find_project_columns(project_id)
   end
 
   def column_cards_data
-    github_service.find_project_cards(column_id)
+    @column_cards_data ||= github_service.find_project_cards(column_id)
   end
 
   def card_data
-    github_service.find_card(card_id)
+    @card_data ||= github_service.find_card(card_id)
   end
 end
