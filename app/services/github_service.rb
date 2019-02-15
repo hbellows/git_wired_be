@@ -16,6 +16,10 @@ class GithubService
     get_json("/projects/columns/#{column_id}/cards")
   end
 
+  def card_data(card_id)
+    get_json("/projects/columns/cards/#{card_id}")
+  end
+
 
   private
 

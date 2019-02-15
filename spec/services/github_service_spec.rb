@@ -48,17 +48,22 @@ describe GithubService do
       end
     end
 
-    xit 'returns #project_cards' do
-      # VCR.use_cassette('project_cards') do
+    it 'returns #project_cards' do
+      VCR.use_cassette('project_cards') do
         response = subject.project_cards(4407129)
 
-        binding.pry
         expect(response).to be_a(Array)
-        # expect(response).to have_key(:results)
-        # expect(response[:results]).to be_a(Array)
-        # expect(response[:results][0][:geometry][:location]).to have_key(:lat)
-        # expect(response[:results][0][:geometry][:location]).to have_key(:lng)
-      # end
+        expect(response[0][:id]).to be_a(Integer)
+      end
+    end
+
+    it 'returns #card_data' do
+      VCR.use_cassette('card_data') do
+        response = subject.card_data(17625549)
+
+        expect(response).to be_a(Hash)
+        expect(response[:id]).to be_a(Integer)
+      end
     end
   end
 end
