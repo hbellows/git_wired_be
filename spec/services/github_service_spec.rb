@@ -38,14 +38,14 @@ describe GithubService do
     end
     
     it 'returns #project_columns' do
-      # VCR.use_cassette('project_columns') do
-      response = subject.project_columns(2166821)
+      VCR.use_cassette('project_columns') do
+        response = subject.project_columns(2166821)
       
         expect(response).to be_a(Array)
         expect(response[0][:id]).to be_a(Integer)
         expect(response[0][:name]).to be_a(String)
         expect(response[0][:updated_at]).to be_a(String)
-      # end
+      end
     end
 
     xit 'returns #project_cards' do
