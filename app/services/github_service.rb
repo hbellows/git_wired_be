@@ -8,13 +8,14 @@ class GithubService
     get_json("/repos/#{login}/#{repo}/projects")
   end
   
-  # def project_data(login)
-  #   get_json("/users/#{login}/projects")
-  # end
-
-  def project_data(login, repo, id)
-    get_json("/repos/#{login}/#{repo}/projects/#{id}")
+  def project_columns(project_id)
+    get_json("/projects/#{project_id}/columns")
   end
+
+  def project_cards(column_id)
+    get_json("/projects/columns/#{column_id}/cards")
+  end
+
 
   private
 
