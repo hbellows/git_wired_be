@@ -1,7 +1,7 @@
-<!-- ![alt text](https://img.shields.io/badge/ruby-2.4.0-red.svg "Ruby")
-![alt text](https://img.shields.io/badge/rails-5.1.6-red.svg "Ruby on Rails") -->
-<!-- [![Build Status](https://travis-ci.org/hbellows/rain_or_shine.svg?branch=master)](https://travis-ci.org/hbellows/rain_or_shine)
-[![codecov.io](https://codecov.io/gh/hbellows/rain_or_shine/branch/master/graph/badge.svg)](https://codecov.io/gh/hbellows/rain_or_shine) -->
+![alt text](https://img.shields.io/badge/ruby-2.4.0-red.svg "Ruby")
+![alt text](https://img.shields.io/badge/rails-5.1.6-red.svg "Ruby on Rails")
+[![CircleCI](https://circleci.com/gh/hbellows/git_wired_be/tree/master.svg?style=svg)](https://circleci.com/gh/hbellows/git_wired_be/tree/master)
+[![codecov.io](https://codecov.io/gh/hbellows/rain_or_shine/branch/master/graph/badge.svg)](https://codecov.io/gh/hbellows/git_wired_be)
 # About This Project
 This API application contains endpoints that can be consummed by a frontend application to help developers track frontend functionality creation and completion by matching their github issues to an customizable, animated wireframe.  The user can specify wireframe elements and link them to the corresponding github issue.  The wireframe element will then change shade based on the issue's status as it progresses through development (ie, "To Do", "In Progress", and "Done").
 

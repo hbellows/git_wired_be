@@ -24,6 +24,28 @@ require 'rspec/rails'
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
+require 'spec_helper'
+ENV['RAILS_ENV'] ||= 'test'
+require File.expand_path('../../config/environment', __FILE__)
+
+abort("The Rails environment is running in production mode!") if Rails.env.production?
+require 'rspec/rails'
+# require 'support/factory_bot'
+require 'webmock/rspec'
+require 'vcr'
+require 'simplecov'
+require 'codecov'
+
+SimpleCov.start
+SimpleCov.formatter = SimpleCov::Formatter::Codecov
+
+VCR.configure do |config|
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  config.hook_into :webmock
+  config.allow_http_connections_when_no_cassette = true
+  config.filter_sensitive_data('<GITHUB API KEY>') { ENV['GITHUB_API_KEY'] }
+end
+
 begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
@@ -39,15 +61,40 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.filter_rails_from_backtrace!
-  # OmniAuth.config.test_mode = true
 
   Capybara.default_host = 'http://localhost:3000'
+end
 
-  # OmniAuth.config.test_mode = true
-  # OmniAuth.config.add_mock(:github,
-  #   :credentials => {
-  #   :token => '54321'},
-  #   :extra => {:raw_info => {:id => '12345', :login => 'jaw'}},
-  #   :info => {:email => 'jawesome@gmail.com'}
-  # )
+  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.use_transactional_fixtures = true
+  config.infer_spec_type_from_file_location!
+  config.include FactoryBot::Syntax::Methods
+
+  config.fuubar_progress_bar_options = { 
+    :format => "%a %b\u{15E7}%i %p%% %t",
+    :progress_mark  => ' ',
+    :remainder_mark => "\u{FF65}"
+  }
+
+  config.filter_rails_from_backtrace!
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
+
+DatabaseCleaner.strategy = :truncation
+RSpec.configure do |config|
+  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+
+  config.before(:all) do
+    DatabaseCleaner.clean
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
 end
