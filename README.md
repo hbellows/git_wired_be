@@ -41,28 +41,22 @@ GET to '/api/v1/repositories?user_name=user_name
         "id": "hbellows",
         "type": "repository",
         "attributes": {
-            "repos": [
+            "repositories": [
                 {
                     "id": 1,
                     "name": "git_wired_be",
-                    "github_id": "170214553",
-                    "created_at": "2019-02-17T16:06:09.358Z",
-                    "updated_at": "2019-02-17T16:06:09.358Z"
+                    "github_id": "170214553"
                 },
                 {
                     "id": 2,
                     "name": "Brownfield-of-Dreams",
-                    "github_id": "170607745",
-                    "created_at": "2019-02-17T16:06:09.387Z",
-                    "updated_at": "2019-02-17T16:06:09.387Z"
+                    "github_id": "170607745"
                 },
                 {
                     "id": 3,
                     "name": "quantifiedSelfApi",
-                    "github_id": "168269382",
-                    "created_at": "2019-02-17T16:06:09.391Z",
-                    "updated_at": "2019-02-17T16:06:09.391Z"
-                },
+                    "github_id": "168269382"
+                }
             ]
         }
     }
