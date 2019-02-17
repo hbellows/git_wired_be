@@ -62,8 +62,8 @@ RSpec.configure do |config|
 
   config.filter_rails_from_backtrace!
 
-  Capybara.default_host = 'http://localhost:3000'
-end
+#   Capybara.default_host = 'http://localhost:3000'
+# end
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true
