@@ -8,7 +8,7 @@ class RepositoryFinder
 
   def repos
     repos_data.map do |data|
-      Repo.new(data)
+      Repository.find_or_create_by(name: data[:name], github_id: data[:id])
     end
   end
 

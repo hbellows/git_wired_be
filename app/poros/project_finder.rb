@@ -5,12 +5,6 @@ class ProjectFinder
     @login = login
   end
 
-  def repos
-    repos_data.map do |data|
-      Repo.new(data)
-    end
-  end
-
   def repo_projects
     repo_projects_data.map do |data|
       RepoProject.new(data)
@@ -21,10 +15,6 @@ class ProjectFinder
 
   def github_service
     @github_service ||= GithubService.new
-  end
-
-  def repos_data
-    github_service.find_repos(@login)
   end
 
   def repo_projects_data

@@ -43,32 +43,26 @@ GET to '/api/v1/repositories?user_name=user_name
         "attributes": {
             "repos": [
                 {
-                    "id": 170214553,
-                    "repo_name": "git_wired_be",
-                    "owner": "hbellows",
-                    "owner_id": 35637783,
-                    "updated_at": "February 17, 2019",
-                    "has_projects": true,
-                    "open_issues": 25
+                    "id": 1,
+                    "name": "git_wired_be",
+                    "github_id": "170214553",
+                    "created_at": "2019-02-17T16:06:09.358Z",
+                    "updated_at": "2019-02-17T16:06:09.358Z"
                 },
                 {
-                    "id": 170607745,
-                    "repo_name": "Brownfield-of-Dreams",
-                    "owner": "hbellows",
-                    "owner_id": 35637783,
-                    "updated_at": "February 14, 2019",
-                    "has_projects": true,
-                    "open_issues": 0
+                    "id": 2,
+                    "name": "Brownfield-of-Dreams",
+                    "github_id": "170607745",
+                    "created_at": "2019-02-17T16:06:09.387Z",
+                    "updated_at": "2019-02-17T16:06:09.387Z"
                 },
                 {
-                    "id": 168269382,
-                    "repo_name": "quantifiedSelfApi",
-                    "owner": "hbellows",
-                    "owner_id": 35637783,
-                    "updated_at": "February  7, 2019",
-                    "has_projects": true,
-                    "open_issues": 3
-                }
+                    "id": 3,
+                    "name": "quantifiedSelfApi",
+                    "github_id": "168269382",
+                    "created_at": "2019-02-17T16:06:09.391Z",
+                    "updated_at": "2019-02-17T16:06:09.391Z"
+                },
             ]
         }
     }
