@@ -28,7 +28,55 @@ More information about GitHub developer keys can be found in the [GitHub develop
 
 # How To Use 
 These are the endpoints that are currently available in the application:
-### Elements
+
+## Repositories
+
+To see all repositories for a user: 
+```
+GET to '/api/v1/repositories?user_name=user_name
+```
+```
+{
+    "data": {
+        "id": "hbellows",
+        "type": "repository",
+        "attributes": {
+            "repos": [
+                {
+                    "id": 170214553,
+                    "repo_name": "git_wired_be",
+                    "owner": "hbellows",
+                    "owner_id": 35637783,
+                    "updated_at": "February 17, 2019",
+                    "has_projects": true,
+                    "open_issues": 25
+                },
+                {
+                    "id": 170607745,
+                    "repo_name": "Brownfield-of-Dreams",
+                    "owner": "hbellows",
+                    "owner_id": 35637783,
+                    "updated_at": "February 14, 2019",
+                    "has_projects": true,
+                    "open_issues": 0
+                },
+                {
+                    "id": 168269382,
+                    "repo_name": "quantifiedSelfApi",
+                    "owner": "hbellows",
+                    "owner_id": 35637783,
+                    "updated_at": "February  7, 2019",
+                    "has_projects": true,
+                    "open_issues": 3
+                }
+            ]
+        }
+    }
+}
+```
+## Projects
+
+
 # Running Tests
 Run `rspec` to run the full test suite, or `rails server` to load up the application.
 # Dependencies

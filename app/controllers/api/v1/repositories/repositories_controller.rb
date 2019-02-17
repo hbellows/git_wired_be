@@ -1,4 +1,4 @@
-class Api::V1::Repositories::RepositoriesController < ApiController
+class Api::V1::Repositories::RepositoriesController < ApplicationController
 
   def index
     render json: RepositorySerializer.new(repositories).serialized_json

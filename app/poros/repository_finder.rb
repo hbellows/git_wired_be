@@ -1,4 +1,4 @@
-class ProjectFinder
+class RepositoryFinder
 
   attr_reader :login
   
