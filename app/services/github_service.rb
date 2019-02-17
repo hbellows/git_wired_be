@@ -20,7 +20,6 @@ class GithubService
     get_json("/projects/columns/cards/#{card_id}")
   end
 
-
   private
 
   def conn
