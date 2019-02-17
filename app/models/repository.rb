@@ -1,3 +1,7 @@
 class Repository < ApplicationRecord
-  belongs_to :user
+  has_many :user_repositories
+  has_many :users, through: :user_repositories
+  
+  has_many :repository_projects
+  has_many :projects, through: :repository_projects
 end

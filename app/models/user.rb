@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   validates_presence_of :token, :login, :github_id
 
-  has_many :repositories
+  has_many :user_repositories
+  has_many :repositories, through: :user_repositories
 
   def self.find_or_create(auth)
     find_or_create_by(github_id: auth[:id]) do |u|
