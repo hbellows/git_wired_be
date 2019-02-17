@@ -12,6 +12,12 @@ class RepositoryFinder
     end
   end
 
+  def repositories
+    repos.map do |data|
+      Repo.new(data)
+    end
+  end
+
   private
 
   def github_service
