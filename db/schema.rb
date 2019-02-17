@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_17_045537) do
+ActiveRecord::Schema.define(version: 2019_02_17_045855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cards", force: :cascade do |t|
+    t.string "github_id"
+    t.bigint "column_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["column_id"], name: "index_cards_on_column_id"
+  end
 
   create_table "columns", force: :cascade do |t|
     t.string "status"
@@ -32,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_02_17_045537) do
 
   create_table "projects", force: :cascade do |t|
     t.string "title"
+    t.string "github_id"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -39,6 +48,7 @@ ActiveRecord::Schema.define(version: 2019_02_17_045537) do
 
   create_table "repositories", force: :cascade do |t|
     t.string "name"
+    t.string "github_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,6 +64,7 @@ ActiveRecord::Schema.define(version: 2019_02_17_045537) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "cards", "columns"
   add_foreign_key "project_columns", "columns"
   add_foreign_key "project_columns", "projects"
   add_foreign_key "repositories", "users"
