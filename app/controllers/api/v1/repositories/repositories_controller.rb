@@ -1,13 +1,13 @@
 class Api::V1::Repositories::RepositoriesController < ApiController
 
-def index
-  render json: RepositorySerializer.new(repositories).serialized_json
-end
+  def index
+    render json: RepositorySerializer.new(repositories).serialized_json
+  end
 
-private
+  private
 
-def repositories
-  @repositories ||= RepositoryFinder.new(params[:user_name])
-end
+  def repositories
+    @repositories ||= RepositoryFinder.new(params[:user_name])
+  end
 
 end
