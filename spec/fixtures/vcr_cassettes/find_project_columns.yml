@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Sun, 17 Feb 2019 02:31:15 GMT
+      - Sun, 17 Feb 2019 03:41:08 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -33,9 +33,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4969'
+      - '4946'
       X-Ratelimit-Reset:
-      - '1550371233'
+      - '1550376554'
       Cache-Control:
       - private, max-age=60, s-maxage=60
       Vary:
@@ -68,7 +68,7 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - D29D:4420:1B8E59C:384837E:5C68C772
+      - D3E6:5B43:E1394B:21C9DC5:5C68D7D4
     body:
       encoding: ASCII-8BIT
       string: '[{"url":"https://api.github.com/projects/columns/4407129","project_url":"https://api.github.com/projects/2166821","cards_url":"https://api.github.com/projects/columns/4407129/cards","id":4407129,"node_id":"MDEzOlByb2plY3RDb2x1bW40NDA3MTI5","name":"To
@@ -77,5 +77,5 @@ http_interactions:
         review","created_at":"2019-02-12T13:01:43Z","updated_at":"2019-02-12T13:01:43Z"},{"url":"https://api.github.com/projects/columns/4407132","project_url":"https://api.github.com/projects/2166821","cards_url":"https://api.github.com/projects/columns/4407132/cards","id":4407132,"node_id":"MDEzOlByb2plY3RDb2x1bW40NDA3MTMy","name":"Reviewer
         approved","created_at":"2019-02-12T13:01:43Z","updated_at":"2019-02-13T20:38:39Z"},{"url":"https://api.github.com/projects/columns/4407133","project_url":"https://api.github.com/projects/2166821","cards_url":"https://api.github.com/projects/columns/4407133/cards","id":4407133,"node_id":"MDEzOlByb2plY3RDb2x1bW40NDA3MTMz","name":"Done","created_at":"2019-02-12T13:01:43Z","updated_at":"2019-02-17T01:26:15Z"},{"url":"https://api.github.com/projects/columns/4407134","project_url":"https://api.github.com/projects/2166821","cards_url":"https://api.github.com/projects/columns/4407134/cards","id":4407134,"node_id":"MDEzOlByb2plY3RDb2x1bW40NDA3MTM0","name":"Deployed","created_at":"2019-02-12T13:01:58Z","updated_at":"2019-02-12T13:02:25Z"}]'
     http_version: 
-  recorded_at: Sun, 17 Feb 2019 02:31:11 GMT
+  recorded_at: Sun, 17 Feb 2019 03:41:04 GMT
 recorded_with: VCR 4.0.0

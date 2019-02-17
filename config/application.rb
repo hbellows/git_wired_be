@@ -19,6 +19,8 @@ Bundler.require(*Rails.groups)
 
 module GitWiredBe
   class Application < Rails::Application
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
@@ -31,5 +33,6 @@ module GitWiredBe
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    config.autoload_paths << Rails.root.join('lib')
   end
 end
