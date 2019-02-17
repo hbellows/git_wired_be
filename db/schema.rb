@@ -10,10 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_13_203607) do
+ActiveRecord::Schema.define(version: 2019_02_17_050514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cards", force: :cascade do |t|
+    t.string "github_id"
+    t.bigint "column_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["column_id"], name: "index_cards_on_column_id"
+  end
+
+  create_table "columns", force: :cascade do |t|
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "project_columns", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "column_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["column_id"], name: "index_project_columns_on_column_id"
+    t.index ["project_id"], name: "index_project_columns_on_project_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
+    t.string "github_id"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "repositories", force: :cascade do |t|
+    t.string "name"
+    t.string "github_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_repositories_on_user_id"
+  end
+
+  create_table "repository_projects", force: :cascade do |t|
+    t.bigint "repository_id"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_repository_projects_on_project_id"
+    t.index ["repository_id"], name: "index_repository_projects_on_repository_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
@@ -24,4 +73,10 @@ ActiveRecord::Schema.define(version: 2019_02_13_203607) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "cards", "columns"
+  add_foreign_key "project_columns", "columns"
+  add_foreign_key "project_columns", "projects"
+  add_foreign_key "repositories", "users"
+  add_foreign_key "repository_projects", "projects"
+  add_foreign_key "repository_projects", "repositories"
 end

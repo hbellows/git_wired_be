@@ -13,7 +13,7 @@ class ProjectFinder
 
   def repo_projects
     repo_projects_data.map do |data|
-      Project.new(data)
+      RepoProject.new(data)
     end
   end
 
