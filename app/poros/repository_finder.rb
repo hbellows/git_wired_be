@@ -1,14 +1,21 @@
 class RepositoryFinder
 
-  attr_reader :login
+  attr_reader :user
   
-  def initialize(login)
-    @login = login
+  def initialize(user)
+    @user = user
   end
 
+  # def repos
+  #   repos_data.map do |data|
+  #     Repository.find_or_create_by(name: data[:name], github_id: data[:id])
+  #   end
+  # end
+
+  # TODO: UPDATE THE ABOVE METHOD ONCE OAUTH IS WORKING
   def repos
     repos_data.map do |data|
-      Repository.find_or_create_by(name: data[:name], github_id: data[:id])
+      user.repositories.find_or_create_by(name: data[:name], github_id: data[:id])
     end
   end
 
@@ -25,6 +32,6 @@ class RepositoryFinder
   end
 
   def repos_data
-    github_service.find_repos(@login)
+    github_service.find_repos(user.user_name)
   end
 end

@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Sun, 17 Feb 2019 03:39:01 GMT
+      - Sun, 17 Feb 2019 20:04:30 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -33,15 +33,15 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4967'
+      - '4998'
       X-Ratelimit-Reset:
-      - '1550376554'
+      - '1550437470'
       Cache-Control:
       - private, max-age=60, s-maxage=60
       Vary:
       - Accept, Authorization, Cookie, X-GitHub-OTP
       Etag:
-      - W/"1f1e1f597cf5b1eec2e16f5db63c1ecc"
+      - W/"a692dc20491005e1591f092d73600bae"
       X-Oauth-Scopes:
       - admin:business, admin:gpg_key, admin:org, admin:org_hook, admin:public_key,
         admin:repo_hook, delete_repo, gist, notifications, repo, user, write:discussion
@@ -68,11 +68,11 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'
       X-Github-Request-Id:
-      - D3D8:5B47:16C1BC5:3130BB5:5C68D755
+      - E0EB:363D:E67DD8:2314745:5C69BE4E
     body:
       encoding: ASCII-8BIT
       string: '[{"owner_url":"https://api.github.com/repos/hbellows/git_wired_be","url":"https://api.github.com/projects/2166821","html_url":"https://github.com/hbellows/git_wired_be/projects/1","columns_url":"https://api.github.com/projects/2166821/columns","id":2166821,"node_id":"MDc6UHJvamVjdDIxNjY4MjE=","name":"git_wired_be","body":"API
-        for the git_wired frontend application","number":1,"state":"open","creator":{"login":"hbellows","id":35637783,"node_id":"MDQ6VXNlcjM1NjM3Nzgz","avatar_url":"https://avatars2.githubusercontent.com/u/35637783?v=4","gravatar_id":"","url":"https://api.github.com/users/hbellows","html_url":"https://github.com/hbellows","followers_url":"https://api.github.com/users/hbellows/followers","following_url":"https://api.github.com/users/hbellows/following{/other_user}","gists_url":"https://api.github.com/users/hbellows/gists{/gist_id}","starred_url":"https://api.github.com/users/hbellows/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/hbellows/subscriptions","organizations_url":"https://api.github.com/users/hbellows/orgs","repos_url":"https://api.github.com/users/hbellows/repos","events_url":"https://api.github.com/users/hbellows/events{/privacy}","received_events_url":"https://api.github.com/users/hbellows/received_events","type":"User","site_admin":false},"created_at":"2019-02-12T13:01:43Z","updated_at":"2019-02-17T01:32:13Z"}]'
+        for the git_wired frontend application","number":1,"state":"open","creator":{"login":"hbellows","id":35637783,"node_id":"MDQ6VXNlcjM1NjM3Nzgz","avatar_url":"https://avatars2.githubusercontent.com/u/35637783?v=4","gravatar_id":"","url":"https://api.github.com/users/hbellows","html_url":"https://github.com/hbellows","followers_url":"https://api.github.com/users/hbellows/followers","following_url":"https://api.github.com/users/hbellows/following{/other_user}","gists_url":"https://api.github.com/users/hbellows/gists{/gist_id}","starred_url":"https://api.github.com/users/hbellows/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/hbellows/subscriptions","organizations_url":"https://api.github.com/users/hbellows/orgs","repos_url":"https://api.github.com/users/hbellows/repos","events_url":"https://api.github.com/users/hbellows/events{/privacy}","received_events_url":"https://api.github.com/users/hbellows/received_events","type":"User","site_admin":false},"created_at":"2019-02-12T13:01:43Z","updated_at":"2019-02-17T18:59:19Z"}]'
     http_version: 
-  recorded_at: Sun, 17 Feb 2019 03:38:57 GMT
+  recorded_at: Sun, 17 Feb 2019 20:04:24 GMT
 recorded_with: VCR 4.0.0

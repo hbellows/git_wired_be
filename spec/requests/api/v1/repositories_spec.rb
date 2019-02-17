@@ -4,7 +4,9 @@ describe 'user visits /api/v1/repositories' do
   context 'GET request' do
     it 'it returns a list of repositories for a specific github user' do
       VCR.use_cassette('get_repositories') do
-        user_name = 'hbellows'
+        user = User.create(email: 'harper.bellows@gmail.com', user_name: 'hbellows', github_id: '35637783', token: "#{ENV['GITHUB_API_KEY']}")
+
+        user_name = user.user_name
         
         get "/api/v1/repositories?user_name=#{user_name}"
 

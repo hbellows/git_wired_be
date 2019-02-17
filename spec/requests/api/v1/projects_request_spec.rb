@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'user visits /api/v1/projects' do
+xdescribe 'user visits /api/v1/projects' do
   context 'GET request' do
     it 'it returns a list of projects for a specific github user repository' do
       # VCR.use_cassette('get_projects') do
