@@ -1,20 +1,19 @@
 class Api::V1::Repositories::ProjectsController < ApplicationController
 
   def index
-    render json: ProjectSerializer.new(projects).serialized_json
+    render json: ProjectSerializer.new(repository.projects).serialized_json
   end
   
-  def show
-    render json: ProjectSerializer.new(project).serialized_json
-  end
 
   private
 
-  def projects
-    
+  def repository
+    @repository ||= Repository.find_by(id: params[:repository_id])
   end
 
-  def project
-    @projects ||= ProjectFinder.new(params[:github_login])
-  end
+  # USE THIS METHOD ONCE AUTHENTICATION IS FINALIZED
+  # def repository
+  #   @repository ||= current_user.repositories.find_by(id: params[:repository_id)
+  # end
+
 end

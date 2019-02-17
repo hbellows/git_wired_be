@@ -3,10 +3,13 @@ require 'rails_helper'
 describe 'user visits /api/v1/projects' do
   context 'GET request' do
     it 'it returns a list of projects for a specific github user repository' do
-      VCR.use_cassette('get_projects') do
-        repository_id = '170214553'
+      # VCR.use_cassette('get_projects') do
+        user = User.create!(email: 'gracehopper@awesomesauce.com', user_name: 'grace_hopper', github_id: '12345', token: 'abc123')
+        repository = user.repositories.create!(name: 'My Repo', github_id: '76767676')
         
-        get "/api/v1/repositories/#{repository_id}/projects"
+        id = repository.id
+        
+        get "/api/v1/repositories/#{id}/projects"
 
         expect(response.status).to eq(200)
 
@@ -22,7 +25,7 @@ describe 'user visits /api/v1/projects' do
         # expect(returned_projects[:data][:attributes][:projects][0]).to have_key(:id)
         # expect(returned_projects[:data][:attributes][:projects][0]).to have_key(:name)
         # expect(returned_projects[:data][:attributes][:projects][0]).to have_key(:github_id)
-      end
+      # end
     end
   end
 end
