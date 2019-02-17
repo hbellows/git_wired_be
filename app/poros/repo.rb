@@ -1,19 +1,12 @@
-class Repo
+class Repo 
+
   attr_reader :id,
-              :repo_name, 
-              :owner,
-              :owner_id,
-              :updated_at,
-              :has_projects,
-              :open_issues
+              :name,
+              :github_id
 
   def initialize(data)
-    @id = data[:id]
-    @repo_name = data[:name]
-    @owner = data[:owner][:login]
-    @owner_id = data[:owner][:id]
-    @updated_at = Time.parse(data[:updated_at]).strftime('%B %e, %Y')
-    @has_projects = data[:has_projects]
-    @open_issues = data[:open_issues]
+    @id = data.id
+    @name = data.name
+    @github_id = data.github_id
   end
 end
