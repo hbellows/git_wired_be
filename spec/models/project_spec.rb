@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-xdescribe Project do
-  it { should have_many(:repositories) }
-  it { should have_many(:columns) } 
+describe Project do
+  it { should have_many(:repositories).through(:repository_projects) } 
+  it { should have_many(:columns).through(:project_columns) } 
 end
