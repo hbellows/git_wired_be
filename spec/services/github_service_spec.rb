@@ -42,7 +42,6 @@ describe GithubService do
       VCR.use_cassette('find_project_columns') do
         response = subject.find_project_columns(2166821)
       
-        binding.pry
         expect(response).to be_a(Array)
         expect(response[0][:id]).to be_a(Integer)
         expect(response[0][:name]).to be_a(String)
@@ -56,6 +55,7 @@ describe GithubService do
 
         expect(response).to be_a(Array)
         expect(response[0][:id]).to be_a(Integer)
+        expect(response[0][:creator][:login]).to be_a(String)
       end
     end
 
@@ -65,6 +65,7 @@ describe GithubService do
 
         expect(response).to be_a(Hash)
         expect(response[:id]).to be_a(Integer)
+        expect(response[:creator][:login]).to be_a(String)
       end
     end
   end
