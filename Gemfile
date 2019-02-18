@@ -12,6 +12,7 @@ gem 'faraday'
 gem 'figaro'
 gem 'fast_jsonapi'
 gem 'jwt'
+gem 'cors'
 # gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
