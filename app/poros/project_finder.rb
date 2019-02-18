@@ -31,16 +31,4 @@ class ProjectFinder
   def repo_projects_data
     github_service.find_repo_projects(@user.user_name, @repo.name)
   end
-
-  def project_columns_data
-    github_service.find_project_columns(project_id)
-  end
-
-  def column_cards_data
-    github_service.find_project_cards(column_id)
-  end
-
-  # def card_data
-  #   github_service.find_card(card_id)
-  # end
 end

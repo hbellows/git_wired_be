@@ -16,6 +16,7 @@ class GithubService
     get_json("/projects/#{project_id}/columns")
   end
 
+
   def find_column_cards(column_id)
     get_json("/projects/columns/#{column_id}/cards")
   end
