@@ -33,7 +33,7 @@ These are the endpoints that are currently available in the application:
 
 To see all repositories for a user: 
 ```
-GET to '/api/v1/repositories?user_name=user_name
+GET to '/api/v1/repositories
 ```
 ```
 {
@@ -63,7 +63,32 @@ GET to '/api/v1/repositories?user_name=user_name
 }
 ```
 ## Projects
-
+To see all projects attached to a repository:
+```
+GET to '/api/v1/repositories/:id/projects
+```
+```
+{
+    "data": {
+        "id": "git_wired_be",
+        "type": "project",
+        "attributes": {
+            "repository_projects": [
+                {
+                    "repo_id": 1,
+                    "project_id": 2166821
+                    "name": "git_wired_be",
+                    "state": "open",
+                    "creator": "hbellows",
+                    "creator_id": 35637783
+                    "created_at": "February 12, 2019",
+                    "updated_at": "February 17, 2019"
+                }
+            ]
+        }
+    }
+}
+```
 
 # Running Tests
 Run `rspec` to run the full test suite, or `rails server` to load up the application.
