@@ -2,7 +2,8 @@ require 'rails_helper'
 
 describe GithubService do
   
-  subject { GithubService.new }
+  user = User.create(email: 'harper.bellows@gmail.com', user_name: 'hbellows', github_id: '35637783', token: "#{ENV['GITHUB_API_KEY']}")
+  subject { GithubService.new(user.token) }
 
   it 'exists' do
     expect(subject).to be_a(GithubService)
