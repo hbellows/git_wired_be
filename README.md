@@ -24,7 +24,8 @@ More information about GitHub developer keys can be found in the [GitHub develop
 4. Add the following API keys to config/application.yml with the variable names exactly as shown:
    - `GITHUB_API_KEY`
 5. Run `rails db:{create,migrate,seed}` in the project folder.
-6.
+6. To use the application locally, run `rails s` and navigate to `http:localhost:3000`
+7. Or, use go [here](https://git-wired-be.herokuapp.com/) to see the application live
 
 # How To Use 
 These are the endpoints that are currently available in the application:
@@ -71,25 +72,42 @@ Run `rspec` to run the full test suite, or `rails server` to load up the applica
 
  ### All Environments
  [Rails](https://guides.rubyonrails.org/)
+ 
  [Postgresql](https://www.postgresql.org/)
+ 
  [Puma](https://github.com/puma/puma)
+ 
  [Bootsnap](https://github.com/Shopify/bootsnap)
+ 
  [Faraday](https://github.com/lostisland/faraday)
+ 
  [Figaro](https://github.com/laserlemon/figaro)
+ 
  [Fast_jsonapi](https://github.com/Netflix/fast_jsonapi)
+ 
  [Jason Web Token for Ruby](https://github.com/jwt/ruby-jwt)
+ 
  ### Development
  [Rspec for Rails](https://github.com/rspec/rspec-rails)
+ 
  [Capybara](https://github.com/teamcapybara/capybara)
+ 
  [Factory Bot for Rails](https://github.com/thoughtbot/factory_bot_rails)
+ 
  [Pry for Rails](https://github.com/rweng/pry-rails)
+ 
  [Awesome Print](https://github.com/awesome-print/awesome_print)
+ 
  [Fuubar](https://github.com/thekompanee/fuubar)
  ### Test
  [VCR](https://github.com/vcr/vcr)
+ 
  [Webmock](https://github.com/bblimke/webmock)
+ 
  [Shoulda-Matchers](https://github.com/thoughtbot/shoulda-matchers)
+ 
  [Database Cleaner](https://github.com/DatabaseCleaner/database_cleaner)
+ 
  [Simplecov](https://github.com/colszowka/simplecov)
   
 
