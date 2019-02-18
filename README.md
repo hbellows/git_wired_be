@@ -1,5 +1,5 @@
-![alt text](https://img.shields.io/badge/ruby-2.4.0-red.svg "Ruby")
-![alt text](https://img.shields.io/badge/rails-5.1.6-red.svg "Ruby on Rails")
+![alt text](https://img.shields.io/badge/ruby-2.4.1-red.svg "Ruby")
+![alt text](https://img.shields.io/badge/rails-5.2.1-red.svg "Ruby on Rails")
 [![CircleCI](https://circleci.com/gh/hbellows/git_wired_be/tree/master.svg?style=svg)](https://circleci.com/gh/hbellows/git_wired_be/tree/master)
 [![codecov.io](https://codecov.io/gh/hbellows/rain_or_shine/branch/master/graph/badge.svg)](https://codecov.io/gh/hbellows/git_wired_be)
 # About This Project
@@ -12,8 +12,8 @@ Please note: This application uses GitHub for Oauth, so you'll likely need to gr
 
 More information about GitHub developer keys can be found in the [GitHub developer docs](https://developer.github.com/v3/).
 
- - Ruby >= 2.4.0
- - Rails >= 5.1.6
+ - Ruby >= 2.4.1
+ - Rails >= 5.2.1
  - Your own GitHub API key
  - Please see the following section for instructions on handling personal api keys.
 
@@ -68,6 +68,31 @@ GET to '/api/v1/repositories?user_name=user_name
 # Running Tests
 Run `rspec` to run the full test suite, or `rails server` to load up the application.
 # Dependencies
+
+ ### All Environments
+ [Rails](https://guides.rubyonrails.org/)
+ [Postgresql](https://www.postgresql.org/)
+ [Puma](https://github.com/puma/puma)
+ [Bootsnap](https://github.com/Shopify/bootsnap)
+ [Faraday](https://github.com/lostisland/faraday)
+ [Figaro](https://github.com/laserlemon/figaro)
+ [Fast_jsonapi](https://github.com/Netflix/fast_jsonapi)
+ [Jason Web Token for Ruby](https://github.com/jwt/ruby-jwt)
+ ### Development
+ [Rspec for Rails](https://github.com/rspec/rspec-rails)
+ [Capybara](https://github.com/teamcapybara/capybara)
+ [Factory Bot for Rails](https://github.com/thoughtbot/factory_bot_rails)
+ [Pry for Rails](https://github.com/rweng/pry-rails)
+ [Awesome Print](https://github.com/awesome-print/awesome_print)
+ [Fuubar](https://github.com/thekompanee/fuubar)
+ ### Test
+ [VCR](https://github.com/vcr/vcr)
+ [Webmock](https://github.com/bblimke/webmock)
+ [Shoulda-Matchers](https://github.com/thoughtbot/shoulda-matchers)
+ [Database Cleaner](https://github.com/DatabaseCleaner/database_cleaner)
+ [Simplecov](https://github.com/colszowka/simplecov)
+  
+
 # Contributing
 GitWired is an open source project. We invite your participation through issues and pull requests! 
 
