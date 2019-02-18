@@ -10,13 +10,6 @@ class RepositoryFinder
     @user.user_name
   end
 
-  # def repos
-  #   repos_data.map do |data|
-  #     Repository.find_or_create_by(name: data[:name], github_id: data[:id])
-  #   end
-  # end
-
-  # TODO: UPDATE THE ABOVE METHOD ONCE OAUTH IS WORKING
   def repos
     repos_data.map do |data|
       @user.repositories.find_or_create_by(name: data[:name], github_id: data[:id])
@@ -32,7 +25,7 @@ class RepositoryFinder
   private
 
   def github_service
-    @github_service ||= GithubService.new
+    @github_service ||= GithubService.new(@user.token)
   end
 
   def repos_data
