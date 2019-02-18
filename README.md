@@ -142,8 +142,8 @@ GitWired is an open source project. We invite your participation through issues 
 When adding or changing a service please add tests.
 
 Issues needing additional support:
-- Issue 1 Placeholder
-- Issue 2 Placeholder
+- Getting more robust card details from this GitHub endpoint: https://developer.github.com/v3/issues/
+- Matching event details to the card from this GitHub endpoint: https://developer.github.com/v3/issues/events/
 
 # Related Projects
 
