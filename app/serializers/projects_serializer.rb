@@ -1,4 +1,4 @@
-class ProjectSerializer
+class ProjectsSerializer
   include FastJsonapi::ObjectSerializer
 
   set_id :repository

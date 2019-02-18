@@ -90,6 +90,42 @@ GET to '/api/v1/repositories/:id/projects
     }
 }
 ```
+```
+GET to '/api/v1/repositories/:repository_id/projects/:id
+```
+```
+{
+    "data": {
+        "id": "git_wired_be",
+        "type": "columns",
+        "attributes": {
+            "column_cards": [
+                {
+                    "column_name": "To Do",
+                    "cards": [
+                        17756001,
+                        17755985,
+                        17755977,
+                        17562127
+                    ]
+                },
+                {
+                    "column_name": "In Progress",
+                    "cards": [
+                        17559315, 
+                        17625549
+                    ]
+                },
+                {
+                    "column_name": "Needs Review",
+                    "cards": []
+                }
+            ]
+        }
+    }
+}
+
+```
 
 # Running Tests
 Run `rspec` to run the full test suite, or `rails server` to load up the application.
