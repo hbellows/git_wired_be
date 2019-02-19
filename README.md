@@ -14,7 +14,7 @@ More information about GitHub developer keys can be found in the [GitHub develop
 
  - Ruby >= 2.4.1
  - Rails >= 5.2.1
- - Your own GitHub API key
+ - Your own GitHub API key is needed to run the tests.
  - Please see the following section for instructions on handling personal api keys.
 
 # Inital Setup
