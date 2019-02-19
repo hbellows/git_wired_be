@@ -34,7 +34,7 @@ These are the endpoints that are currently available in the application:
 
 To see all repositories for a user: 
 ```
-GET to '/api/v1/repositories
+GET to /api/v1/repositories
 ```
 ```
 {
@@ -66,7 +66,7 @@ GET to '/api/v1/repositories
 ## Projects
 To see all projects attached to a repository:
 ```
-GET to '/api/v1/repositories/:id/projects
+GET to /api/v1/repositories/:id/projects
 ```
 ```
 {
@@ -91,7 +91,7 @@ GET to '/api/v1/repositories/:id/projects
 }
 ```
 ```
-GET to '/api/v1/repositories/:repository_id/projects/:id
+GET to /api/v1/repositories/:repository_id/projects/:id
 ```
 ```
 {
