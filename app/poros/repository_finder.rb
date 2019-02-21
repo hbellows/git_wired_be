@@ -1,7 +1,7 @@
 class RepositoryFinder
 
   attr_reader :github_handle
-  
+
   def initialize(user)
     @user = user
   end

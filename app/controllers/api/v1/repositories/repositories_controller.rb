@@ -5,8 +5,9 @@ class Api::V1::Repositories::RepositoriesController < ApplicationController
   end
 
   private
-  
+
   def repositories
     @repositories ||= RepositoryFinder.new(current_user)
   end
+  
 end

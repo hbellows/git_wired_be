@@ -12,7 +12,7 @@ class ProjectFinder
   def repo_projects
     repo_projects_data.map do |data|
       @repo.projects.find_or_create_by(title: data[:name], description: data[:body], github_id: data[:id])
-    end 
+    end
   end
 
   def repository_projects

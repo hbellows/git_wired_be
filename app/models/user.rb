@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates_presence_of :token, :user_name, :github_id
+  validates_presence_of :token, :github_id
 
   has_many :user_repositories
   has_many :repositories, through: :user_repositories
