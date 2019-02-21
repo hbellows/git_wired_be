@@ -62,10 +62,11 @@ describe 'POST request' do
       }
 
       post "/api/v1/repositories/#{repository_id}/wireframes", params: payload
+      
+      json_response = JSON.parse(response.body, symbolize_names: true) 
 
-      response = JSON.parse(response.body, symbolize_names: true)  
-      binding.pry
-      expect(response.status).to eq(201)
+      expect(response.status).to eq(200)
+      expect(json_response[:message]).to eq("Wireframe successfully created")
     end
   end
 end
