@@ -5,7 +5,10 @@ class Api::V1::Repositories::WireframesController < ApplicationController
   end
 
   def show
-    render json: WireframeSerializer.new(wireframe).serialized_json
+    json = WireframeSerializer.new(wireframe).serialized_json
+    hash = JSON.parse(json)
+    hash["data"]["repo"] = repository.name
+    render json: hash 
   end
 
   private
@@ -19,6 +22,7 @@ class Api::V1::Repositories::WireframesController < ApplicationController
   end
 
   def wireframe
-    @wireframe ||= WireframeFinder.new(current_user, repository, params[:id])
+    finder = WireframeFinder.new(current_user, repository)
+    @wireframe ||= finder.wireframe(params[:id])
   end
 end
