@@ -126,6 +126,97 @@ GET to /api/v1/repositories/:repository_id/projects/:id
 }
 
 ```
+## Wireframes
+```
+GET to /api/v1/repositories/:id/wireframes
+```
+```
+{
+    "data": {
+        "id": "git_wired_be",
+        "type": "wireframe",
+        "attributes": {
+            "repository_wireframes": [
+                {
+                    "id": 1,
+                    "repository_name": "My Repository",
+                    "name": "Wireframe 1",
+                    "object": "Wireframe Description 1",
+                    "created_at": "February 20, 2019",
+                    "updated_at": "February 20, 2019"
+                },
+                {
+                    "id": 2,
+                    "repository_name": "My Repository",
+                    "name": "Wireframe 2",
+                    "object": "Wireframe Description 2",
+                    "created_at": "February 20, 2019",
+                    "updated_at": "February 20, 2019"
+                },
+                {
+                 "id": 3,
+                    "repository_name": "My Repository",
+                    "name": "Wireframe 3",
+                    "object": "Wireframe Description 3",
+                    "created_at": "February 20, 2019",
+                    "updated_at": "February 20, 2019"
+                }
+            ]
+        }
+    }
+}
+```
+```
+GET to /api/v1/repositories/:repository_id/wireframes/:id
+```
+```
+{
+    "data": {
+        "id": "git_wired_be",
+        "type": "wireframe",
+        "attributes": {
+            "repository_wireframes": [
+                {
+                    "id": 1,
+                    "repository_name": "My Repository",
+                    "name": "Wireframe 1",
+                    "object": "Wireframe Description 1",
+                    "created_at": "February 20, 2019",
+                    "updated_at": "February 20, 2019"
+                }
+            ]
+        }
+    }
+}
+```
+```
+POST to /api/v1/repositories/:id/wireframes
+
+body:
+  {
+    name: "Wireframe Name",
+    object: "Description of Wireframe"
+  }
+
+Returns status code 201 and
+  {
+    message: "Wireframe successfully created"
+  }
+```
+```
+PUT to /api/v1/repositories/:repository_id/wireframes/:id
+
+body:
+  {
+    name: "Wireframe Name",
+    object: "Description of Wireframe"
+  }
+
+Returns status code 201 and
+  {
+    message: "Wireframe successfully updated"
+  }
+```
 
 # Running Tests
 Run `rspec` to run the full test suite, or `rails server` to load up the application.
