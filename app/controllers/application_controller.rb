@@ -1,25 +1,21 @@
 class ApplicationController < ActionController::API
-  before_action :logged_in?
+  before_action :authenticated?
 
   def current_user
-    return @current_user if @current_user
-  end
-
-  def logged_in?
     if json_web_token?
-      github_id = Auth.decode(read_token_from_request)
-      @current_user = User.find_by({github_id: github_id})
-      authenticated?(@current_user)
+      user_id = JsonWebToken.decode(read_token_from_request)
+      User.find(user_id["user_id"])
     end
   end
 
 private
 
-  def authenticated?(user)
-    if user
+  def authenticated?
+    user = current_user
+    if !user
       render json: {error: "unauthorized"}, status: 401
     else
-      return user
+      true
     end
   end
 
