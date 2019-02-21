@@ -52,6 +52,8 @@ rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
+
+require "./spec/fixtures/stubs/github_stubs"
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -62,6 +64,8 @@ RSpec.configure do |config|
 
   config.filter_rails_from_backtrace!
 
+  include GithubStubs
+
 #   Capybara.default_host = 'http://localhost:3000'
 # end
 
@@ -70,7 +74,7 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.include FactoryBot::Syntax::Methods
 
-  config.fuubar_progress_bar_options = { 
+  config.fuubar_progress_bar_options = {
     :format => "%a %b\u{15E7}%i %p%% %t",
     :progress_mark  => ' ',
     :remainder_mark => "\u{FF65}"
