@@ -5,6 +5,8 @@ class ApplicationController < ActionController::API
     if json_web_token?
       user_id = JsonWebToken.decode(read_token_from_request)
       User.find(user_id["user_id"])
+    elsif params["action"] == "authenticate"
+      return true
     end
   end
 
