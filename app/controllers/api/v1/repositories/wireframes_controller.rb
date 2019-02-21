@@ -8,14 +8,17 @@ class Api::V1::Repositories::WireframesController < ApplicationController
 
   def create
     @wireframe ||= repository.wireframes.find_or_create_by(name: params[:name], object: params[:object])
-    render json: { message: "Wireframe successfully created" }, status: 200
+    render json: { message: "Wireframe successfully created",
+                   wireframe_id: @wireframe.id,
+                   repo_id: repository.id,
+                   wireframe: wireframe}, status: 200
   end
-    
+
   def show
     json = WireframeSerializer.new(wireframe).serialized_json
     hash = JSON.parse(json)
     hash["data"]["repo"] = repository.name
-    render json: hash 
+    render json: hash
   end
 
   private
@@ -29,11 +32,11 @@ class Api::V1::Repositories::WireframesController < ApplicationController
   end
 
   def validate_name
-    render json: nil, status: 401 if params[:name].nil? 
+    render json: nil, status: 401 if params[:name].nil?
   end
 
   def validate_object
-    render json: nil, status: 401 if params[:object].nil? 
+    render json: nil, status: 401 if params[:object].nil?
   end
 
   def wireframe
