@@ -308,7 +308,7 @@ More information about GitWiredFe can be found [here](https://github.com/JoelSmi
 The GitWired frontend application is a JavaScript/React application that consummes the endpoints provided in this API.  
 
 # Schema
-
+![Schema](Schema.png)
 
 # Contributors
 This is a Capstone project for students wrapping up their studies at the Turing School of Software and Design.  The entire project consists of a backend Rails API application that provides endpoints for a JavaScript/React frontend application to consume.
