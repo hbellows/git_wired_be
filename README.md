@@ -65,7 +65,7 @@ GET to /api/v1/repositories
 ```
 ## Issues
 ```
-GET to /api/v1/repositories/:id/issues
+GET to /api/v1/repositories/:repository_id/issues
 ```
 ```
 {
@@ -93,7 +93,7 @@ GET to /api/v1/repositories/:id/issues
 ```
 ## Wireframes
 ```
-GET to /api/v1/repositories/:id/wireframes
+GET to /api/v1/repositories/:repository_id/wireframes
 ```
 ```
 {
@@ -155,7 +155,7 @@ GET to /api/v1/repositories/:repository_id/wireframes/:id
 }
 ```
 ```
-POST to /api/v1/repositories/:id/wireframes
+POST to /api/v1/repositories/:repository_id/wireframes
 
 body:
   {
@@ -185,7 +185,7 @@ Returns status code 201 and
 ## Projects
 To see all projects attached to a repository:
 ```
-GET to /api/v1/repositories/:id/projects
+GET to /api/v1/repositories/:repository_id/projects
 ```
 ```
 {
