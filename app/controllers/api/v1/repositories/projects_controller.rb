@@ -11,7 +11,7 @@ class Api::V1::Repositories::ProjectsController < ApplicationController
   private
 
   def repository
-    @find_repository ||= current_user.repositories.find_by(id: params[:repository_id])
+    @repository ||= current_user.repositories.find_by(id: params[:repository_id])
   end
   
   def projects

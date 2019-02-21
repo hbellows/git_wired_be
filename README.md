@@ -63,72 +63,37 @@ GET to /api/v1/repositories
     }
 }
 ```
-## Projects
-To see all projects attached to a repository:
+## Issues
 ```
-GET to /api/v1/repositories/:id/projects
-```
-```
-{
-    "data": {
-        "id": "git_wired_be",
-        "type": "project",
-        "attributes": {
-            "repository_projects": [
-                {
-                    "repo_id": 1,
-                    "project_id": 2166821
-                    "name": "git_wired_be",
-                    "state": "open",
-                    "creator": "hbellows",
-                    "creator_id": 35637783
-                    "created_at": "February 12, 2019",
-                    "updated_at": "February 17, 2019"
-                }
-            ]
-        }
-    }
-}
-```
-```
-GET to /api/v1/repositories/:repository_id/projects/:id
+GET to /api/v1/repositories/:repository_id/issues
 ```
 ```
 {
-    "data": {
-        "id": "git_wired_be",
-        "type": "columns",
-        "attributes": {
-            "column_cards": [
-                {
-                    "column_name": "To Do",
-                    "cards": [
-                        17756001,
-                        17755985,
-                        17755977,
-                        17562127
-                    ]
-                },
-                {
-                    "column_name": "In Progress",
-                    "cards": [
-                        17559315, 
-                        17625549
-                    ]
-                },
-                {
-                    "column_name": "Needs Review",
-                    "cards": []
-                }
-            ]
-        }
+  repo: 
+   {
+     name: 'Repo1"
+     id:  1
+     html_url: 'https://github.com/octocat/Hello-World'
     }
+   issues:
+      [
+        {
+          id:                1
+          github_id:         4
+          github_number:     99999
+          github_html_url:   "https://github.com/octocat/Hello-World/issues/1347",
+          github_title:      "Title of my Issue"
+          github_body:       "Content of my issue body"
+          github_state:      "open"
+        },
+        {...},
+        {...},
+      ]
 }
-
 ```
 ## Wireframes
 ```
-GET to /api/v1/repositories/:id/wireframes
+GET to /api/v1/repositories/:repository_id/wireframes
 ```
 ```
 {
@@ -190,7 +155,7 @@ GET to /api/v1/repositories/:repository_id/wireframes/:id
 }
 ```
 ```
-POST to /api/v1/repositories/:id/wireframes
+POST to /api/v1/repositories/:repository_id/wireframes
 
 body:
   {
@@ -216,6 +181,69 @@ Returns status code 201 and
   {
     message: "Wireframe successfully updated"
   }
+```
+## Projects
+To see all projects attached to a repository:
+```
+GET to /api/v1/repositories/:repository_id/projects
+```
+```
+{
+    "data": {
+        "id": "git_wired_be",
+        "type": "project",
+        "attributes": {
+            "repository_projects": [
+                {
+                    "repo_id": 1,
+                    "project_id": 2166821
+                    "name": "git_wired_be",
+                    "state": "open",
+                    "creator": "hbellows",
+                    "creator_id": 35637783
+                    "created_at": "February 12, 2019",
+                    "updated_at": "February 17, 2019"
+                }
+            ]
+        }
+    }
+}
+```
+```
+GET to /api/v1/repositories/:repository_id/projects/:id
+```
+```
+{
+    "data": {
+        "id": "git_wired_be",
+        "type": "columns",
+        "attributes": {
+            "column_cards": [
+                {
+                    "column_name": "To Do",
+                    "cards": [
+                        17756001,
+                        17755985,
+                        17755977,
+                        17562127
+                    ]
+                },
+                {
+                    "column_name": "In Progress",
+                    "cards": [
+                        17559315, 
+                        17625549
+                    ]
+                },
+                {
+                    "column_name": "Needs Review",
+                    "cards": []
+                }
+            ]
+        }
+    }
+}
+
 ```
 
 # Running Tests

@@ -10,14 +10,10 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :repositories, module: :repositories, only: %i[index show] do
         resources :projects, only: %i[index show]
+        resources :wireframes, only: %i[index]
       end
     end	
   end
 
 end
 
-
-# get 'api/v1/repositories'
-# get 'api/v1/repositories/:id'
-# get 'api/v1/respositories/:repository_id/projects'
-# get 'api/v1/repositories/:repository_id/projects/:id'
