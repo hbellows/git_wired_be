@@ -1,14 +1,14 @@
 class RepositoryFinder
 
   attr_reader :login
-  
+
   def initialize(login)
     @login = login
   end
 
   def repos
     repos_data.map do |data|
-      Repository.find_or_create_by(name: data[:name], github_id: data[:id])
+      Repository.find_or_create_by(name: data[:name], github_id: data[:id], html_url: data[:html_url])
     end
   end
 
