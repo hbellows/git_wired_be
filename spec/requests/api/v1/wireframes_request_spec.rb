@@ -45,3 +45,27 @@ describe 'GET requests' do
     end
   end
 end
+
+describe 'POST request' do
+  context 'user sends request to /api/v1/repositories/:repository_id/wireframes' do
+    it 'creates a new wireframe for a project and returns status 201 and a message' do
+      user = User.create(email: 'harper.bellows@gmail.com', user_name: 'hbellows', github_id: '35637783', token: "#{ENV['GITHUB_API_KEY']}")
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      
+      repository = user.repositories.create!(name: 'git_wired_be', github_id: '170214553')
+
+      repository_id = repository.id
+
+      payload = {
+        name: "New Wireframe",
+        object: "The new hotness"
+      }
+
+      post "/api/v1/repositories/#{repository_id}/wireframes", params: payload
+
+      response = JSON.parse(response.body, symbolize_names: true)  
+      binding.pry
+      expect(response.status).to eq(201)
+    end
+  end
+end
