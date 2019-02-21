@@ -10,7 +10,7 @@ class Api::V1::Repositories::WireframesController < ApplicationController
     @wireframe ||= repository.wireframes.find_or_create_by(name: params[:name], object: params[:object])
     render json: { message: "Wireframe successfully created" }, status: 200
   end
-  
+    
   def show
     json = WireframeSerializer.new(wireframe).serialized_json
     hash = JSON.parse(json)
