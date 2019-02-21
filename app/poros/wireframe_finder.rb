@@ -1,9 +1,8 @@
 class WireframeFinder
 
-  def initialize(user, repository, wireframe_id)
+  def initialize(user, repository)
     @user = user
     @repository = repository
-    @wireframe_id = wireframe_id
   end
 
   def repository
@@ -16,8 +15,8 @@ class WireframeFinder
     end
   end
 
-  def wireframe
-    @repository.wireframes.find(@wireframe_id)
+  def wireframe(wireframe_id)
+    @repository.wireframes.find(wireframe_id)
   end
 
 end
