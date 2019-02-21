@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'GET requests' do
   context 'user visits /api/v1/repositories/:id/wireframes' do
     it 'it returns a list of wireframes for a specific github user\'s repository' do
-      VCR.use_cassette('get_wireframes') do
+      # VCR.use_cassette('get_wireframes') do
 
         user = User.create(email: 'harper.bellows@gmail.com', user_name: 'hbellows', github_id: '35637783', token: "#{ENV['GITHUB_API_KEY']}")
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
@@ -12,13 +12,14 @@ describe 'GET requests' do
         wireframe_1 = repository.wireframes.create!(name: "Wireframe 1", object: "Description 1")
         wireframe_2 = repository.wireframes.create!(name: "Wireframe 2", object: "Description 2")
         
-        id = repository.id
+        repository_id = repository.id
 
-        get "/api/v1/repositories/#{id}/wireframes"
-
+        get "/api/v1/repositories/#{repository_id}/wireframes"
         expect(response.status).to eq(200)
-
+        
         returned_wireframes = JSON.parse(response.body, symbolize_names: true)
+        binding.pry
+        
         expect(returned_wireframes).to be_a(Hash)
         expect(returned_wireframes).to have_key(:data)
         expect(returned_wireframes[:data]).to have_key(:id)
@@ -32,6 +33,7 @@ describe 'GET requests' do
         expect(returned_wireframes[:data][:attributes][:repository_wireframes][0]).to have_key(:creator)
         expect(returned_wireframes[:data][:attributes][:repository_wireframes][0]).to have_key(:created_at)
         expect(returned_wireframes[:data][:attributes][:repository_wireframes][0]).to have_key(:updated_at)
-      end
+      # end
     end
   end
+end

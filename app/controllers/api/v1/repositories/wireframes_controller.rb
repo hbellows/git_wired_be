@@ -7,7 +7,7 @@ class Api::V1::Repositories::WireframesController < ApplicationController
   private
 
   def repository
-    @repository ||= current_user.repositories.find_by(id: params[:id])
+    @repository ||= current_user.repositories.find_by(id: params[:repository_id])
   end
   
   def wireframes

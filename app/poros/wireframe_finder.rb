@@ -1,17 +1,18 @@
 class WireframeFinder
 
   def initialize(user, repository)
-    binding.pry
     @user = user
     @repository = repository
   end
 
   def repository
-    @repository.title
+    @repository.name
   end
 
   def wireframes
-    repository.wireframes.all
+    @repository.wireframes.map do |data|
+      Wireframer.new(data)
+    end
   end
 
 end
