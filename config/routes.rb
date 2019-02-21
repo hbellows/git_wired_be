@@ -8,10 +8,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :repositories, module: :repositories, only: %i[index show] do
-        resources :projects, only: %i[index show]
+      namespace :repositories do
+        get '/:repository_id/issues', to: 'issues#index'
+        get '/', to: 'repositories#index'
       end
-    end	
+    end
   end
 
 end

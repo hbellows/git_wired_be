@@ -3,11 +3,11 @@ class GithubService
   def find_repos(login)
     get_json("/users/#{login}/repos?sort=updated")
   end
-  
+
   def find_repo_projects(login, repo)
     get_json("/repos/#{login}/#{repo}/projects")
   end
-  
+
   def find_project_columns(project_id)
     get_json("/projects/#{project_id}/columns")
   end
@@ -18,6 +18,10 @@ class GithubService
 
   def find_card(card_id)
     get_json("/projects/columns/cards/#{card_id}")
+  end
+
+  def find_issues(username, repo_name)
+    get_json("/repos/#{username}/#{repo_name}/issues")
   end
 
 
@@ -57,6 +61,3 @@ end
 
 # DEPRICATED
 # GET /repos/:owner/:repo/projects/:number
-
-
-
