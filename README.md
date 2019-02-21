@@ -1,7 +1,7 @@
-![alt text](https://img.shields.io/badge/ruby-2.4.0-red.svg "Ruby")
-![alt text](https://img.shields.io/badge/rails-5.1.6-red.svg "Ruby on Rails")
+![alt text](https://img.shields.io/badge/ruby-2.4.1-red.svg "Ruby")
+![alt text](https://img.shields.io/badge/rails-5.2.1-red.svg "Ruby on Rails")
 [![CircleCI](https://circleci.com/gh/hbellows/git_wired_be/tree/master.svg?style=svg)](https://circleci.com/gh/hbellows/git_wired_be/tree/master)
-[![codecov.io](https://codecov.io/gh/hbellows/rain_or_shine/branch/master/graph/badge.svg)](https://codecov.io/gh/hbellows/git_wired_be)
+[![codecov.io](https://codecov.io/gh/hbellows/git_wired_be/branch/master/graph/badge.svg)](https://codecov.io/gh/hbellows/git_wired_be)
 # About This Project
 This API application contains endpoints that can be consummed by a frontend application to help developers track frontend functionality creation and completion by matching their github issues to an customizable, animated wireframe.  The user can specify wireframe elements and link them to the corresponding github issue.  The wireframe element will then change shade based on the issue's status as it progresses through development (ie, "To Do", "In Progress", and "Done").
 
@@ -12,9 +12,9 @@ Please note: This application uses GitHub for Oauth, so you'll likely need to gr
 
 More information about GitHub developer keys can be found in the [GitHub developer docs](https://developer.github.com/v3/).
 
- - Ruby >= 2.4.0
- - Rails >= 5.1.6
- - Your own GitHub API key
+ - Ruby >= 2.4.1
+ - Rails >= 5.2.1
+ - Your own GitHub API key is needed to run the tests.
  - Please see the following section for instructions on handling personal api keys.
 
 # Inital Setup
@@ -24,7 +24,8 @@ More information about GitHub developer keys can be found in the [GitHub develop
 4. Add the following API keys to config/application.yml with the variable names exactly as shown:
    - `GITHUB_API_KEY`
 5. Run `rails db:{create,migrate,seed}` in the project folder.
-6.
+6. To use the application locally, run `rails s` and navigate to `http:localhost:3000`
+7. Or, use go [here](https://git-wired-be.herokuapp.com/) to see the application live
 
 # How To Use 
 These are the endpoints that are currently available in the application:
@@ -33,7 +34,7 @@ These are the endpoints that are currently available in the application:
 
 To see all repositories for a user: 
 ```
-GET to '/api/v1/repositories?user_name=user_name
+GET to /api/v1/repositories
 ```
 ```
 {
@@ -63,19 +64,213 @@ GET to '/api/v1/repositories?user_name=user_name
 }
 ```
 ## Projects
+To see all projects attached to a repository:
+```
+GET to /api/v1/repositories/:id/projects
+```
+```
+{
+    "data": {
+        "id": "git_wired_be",
+        "type": "project",
+        "attributes": {
+            "repository_projects": [
+                {
+                    "repo_id": 1,
+                    "project_id": 2166821
+                    "name": "git_wired_be",
+                    "state": "open",
+                    "creator": "hbellows",
+                    "creator_id": 35637783
+                    "created_at": "February 12, 2019",
+                    "updated_at": "February 17, 2019"
+                }
+            ]
+        }
+    }
+}
+```
+```
+GET to /api/v1/repositories/:repository_id/projects/:id
+```
+```
+{
+    "data": {
+        "id": "git_wired_be",
+        "type": "columns",
+        "attributes": {
+            "column_cards": [
+                {
+                    "column_name": "To Do",
+                    "cards": [
+                        17756001,
+                        17755985,
+                        17755977,
+                        17562127
+                    ]
+                },
+                {
+                    "column_name": "In Progress",
+                    "cards": [
+                        17559315, 
+                        17625549
+                    ]
+                },
+                {
+                    "column_name": "Needs Review",
+                    "cards": []
+                }
+            ]
+        }
+    }
+}
 
+```
+## Wireframes
+```
+GET to /api/v1/repositories/:id/wireframes
+```
+```
+{
+    "data": {
+        "id": "git_wired_be",
+        "type": "wireframe",
+        "attributes": {
+            "repository_wireframes": [
+                {
+                    "id": 1,
+                    "repository_name": "My Repository",
+                    "name": "Wireframe 1",
+                    "object": "Wireframe Description 1",
+                    "created_at": "February 20, 2019",
+                    "updated_at": "February 20, 2019"
+                },
+                {
+                    "id": 2,
+                    "repository_name": "My Repository",
+                    "name": "Wireframe 2",
+                    "object": "Wireframe Description 2",
+                    "created_at": "February 20, 2019",
+                    "updated_at": "February 20, 2019"
+                },
+                {
+                 "id": 3,
+                    "repository_name": "My Repository",
+                    "name": "Wireframe 3",
+                    "object": "Wireframe Description 3",
+                    "created_at": "February 20, 2019",
+                    "updated_at": "February 20, 2019"
+                }
+            ]
+        }
+    }
+}
+```
+```
+GET to /api/v1/repositories/:repository_id/wireframes/:id
+```
+```
+{
+    "data": {
+        "id": "git_wired_be",
+        "type": "wireframe",
+        "attributes": {
+            "repository_wireframes": [
+                {
+                    "id": 1,
+                    "repository_name": "My Repository",
+                    "name": "Wireframe 1",
+                    "object": "Wireframe Description 1",
+                    "created_at": "February 20, 2019",
+                    "updated_at": "February 20, 2019"
+                }
+            ]
+        }
+    }
+}
+```
+```
+POST to /api/v1/repositories/:id/wireframes
+
+body:
+  {
+    name: "Wireframe Name",
+    object: "Description of Wireframe"
+  }
+
+Returns status code 201 and
+  {
+    message: "Wireframe successfully created"
+  }
+```
+```
+PUT to /api/v1/repositories/:repository_id/wireframes/:id
+
+body:
+  {
+    name: "Wireframe Name",
+    object: "Description of Wireframe"
+  }
+
+Returns status code 201 and
+  {
+    message: "Wireframe successfully updated"
+  }
+```
 
 # Running Tests
 Run `rspec` to run the full test suite, or `rails server` to load up the application.
 # Dependencies
+
+ ### All Environments
+ [Rails](https://guides.rubyonrails.org/)
+ 
+ [Postgresql](https://www.postgresql.org/)
+ 
+ [Puma](https://github.com/puma/puma)
+ 
+ [Bootsnap](https://github.com/Shopify/bootsnap)
+ 
+ [Faraday](https://github.com/lostisland/faraday)
+ 
+ [Figaro](https://github.com/laserlemon/figaro)
+ 
+ [Fast_jsonapi](https://github.com/Netflix/fast_jsonapi)
+ 
+ [Jason Web Token for Ruby](https://github.com/jwt/ruby-jwt)
+ 
+ ### Development
+ [Rspec for Rails](https://github.com/rspec/rspec-rails)
+ 
+ [Capybara](https://github.com/teamcapybara/capybara)
+ 
+ [Factory Bot for Rails](https://github.com/thoughtbot/factory_bot_rails)
+ 
+ [Pry for Rails](https://github.com/rweng/pry-rails)
+ 
+ [Awesome Print](https://github.com/awesome-print/awesome_print)
+ 
+ [Fuubar](https://github.com/thekompanee/fuubar)
+ ### Test
+ [VCR](https://github.com/vcr/vcr)
+ 
+ [Webmock](https://github.com/bblimke/webmock)
+ 
+ [Shoulda-Matchers](https://github.com/thoughtbot/shoulda-matchers)
+ 
+ [Database Cleaner](https://github.com/DatabaseCleaner/database_cleaner)
+ 
+ [Simplecov](https://github.com/colszowka/simplecov)
+  
+
 # Contributing
 GitWired is an open source project. We invite your participation through issues and pull requests! 
 
 When adding or changing a service please add tests.
 
 Issues needing additional support:
-- Issue 1 Placeholder
-- Issue 2 Placeholder
+- Getting more robust card details from this GitHub endpoint: https://developer.github.com/v3/issues/
+- Matching event details to the card from this GitHub endpoint: https://developer.github.com/v3/issues/events/
 
 # Related Projects
 

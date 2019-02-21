@@ -63,6 +63,15 @@ ActiveRecord::Schema.define(version: 2019_02_21_002939) do
     t.index ["repository_id"], name: "index_repository_projects_on_repository_id"
   end
 
+  create_table "repository_wireframes", force: :cascade do |t|
+    t.bigint "wireframe_id"
+    t.bigint "repository_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["repository_id"], name: "index_repository_wireframes_on_repository_id"
+    t.index ["wireframe_id"], name: "index_repository_wireframes_on_wireframe_id"
+  end
+
   create_table "user_repositories", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "repository_id"
@@ -81,11 +90,20 @@ ActiveRecord::Schema.define(version: 2019_02_21_002939) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "wireframes", force: :cascade do |t|
+    t.string "name"
+    t.text "object"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "cards", "columns"
   add_foreign_key "project_columns", "columns"
   add_foreign_key "project_columns", "projects"
   add_foreign_key "repository_projects", "projects"
   add_foreign_key "repository_projects", "repositories"
+  add_foreign_key "repository_wireframes", "repositories"
+  add_foreign_key "repository_wireframes", "wireframes"
   add_foreign_key "user_repositories", "repositories"
   add_foreign_key "user_repositories", "users"
 end

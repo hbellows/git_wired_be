@@ -1,16 +1,21 @@
 class GithubService
 
+  def initialize(token)
+    @token = token
+  end
+
   def find_repos(login)
     get_json("/users/#{login}/repos?sort=updated")
   end
 
-  def find_repo_projects(login, repo)
-    get_json("/repos/#{login}/#{repo}/projects")
+  def find_repo_projects(login, repo_name)
+    get_json("/repos/#{login}/#{repo_name}/projects")
   end
 
   def find_project_columns(project_id)
     get_json("/projects/#{project_id}/columns")
   end
+
 
   def find_column_cards(column_id)
     get_json("/projects/columns/#{column_id}/cards")
@@ -24,13 +29,12 @@ class GithubService
     get_json("/repos/#{username}/#{repo_name}/issues")
   end
 
-
   private
 
   def conn
     Faraday.new(:url => 'https://api.github.com/') do |faraday|
       faraday.headers['Accept'] = 'application/vnd.github.inertia-preview+json'
-      faraday.headers['Authorization'] = "token #{ENV['GITHUB_API_KEY']}"
+      faraday.headers['Authorization'] = "token #{@token}"
       faraday.adapter  Faraday.default_adapter
     end
   end

@@ -31,3 +31,6 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# VCR Fixtures
+/spec/fixtures/*

@@ -1,7 +1,8 @@
 # require 'rails_helper'
 
-# xdescribe Repo do
-#   xit 'can be created with attributes' do
+# describe Repo do
+#   it 'can be created with attributes' do
+#     user = 
 
 #     attributes =  
 #     id: 1

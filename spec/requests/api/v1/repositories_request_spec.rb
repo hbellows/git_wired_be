@@ -7,7 +7,7 @@ describe 'user visits /api/v1/repositories' do
 
         user = User.create(email: 'harper.bellows@gmail.com', user_name: 'hbellows', github_id: '35637783', token: "#{ENV['GITHUB_API_KEY']}")
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-
+        
         get "/api/v1/repositories"
 
         expect(response.status).to eq(200)

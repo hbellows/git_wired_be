@@ -1,36 +1,34 @@
 class ProjectFinder
 
+  def initialize(user, repo)
+    @user = user
+    @repo = repo
+  end
 
-  def initialize(login)
-    @login = login
+  def repository
+    @repo.name
   end
 
   def repo_projects
     repo_projects_data.map do |data|
-      RepoProject.new(data)
+      @repo.projects.find_or_create_by(title: data[:name], description: data[:body], github_id: data[:id])
     end
   end
 
-  def column_cards_data(column_id)
-    github_service.find_project_cards(column_id)
+  def repository_projects
+    repo_projects_data.map do |project|
+      RepoProject.new(project, @repo.id)
+    end
   end
+
 
   private
 
   def github_service
-    @github_service ||= GithubService.new
+    @github_service ||= GithubService.new(@user.token)
   end
 
   def repo_projects_data
-    github_service.find_repo_projects(login, repo)
-  end
-
-  def project_columns_data
-    github_service.find_project_columns(project_id)
-  end
-
-
-  def card_data
-    github_service.find_card(card_id)
+    github_service.find_repo_projects(@user.user_name, @repo.name)
   end
 end

@@ -7,7 +7,7 @@ class Api::V1::Repositories::RepositoriesController < ApplicationController
   private
 
   def repositories
-    @repositories ||= RepositoryFinder.new(params[:user_name])
+    @repositories ||= RepositoryFinder.new(current_user)
   end
-
+  
 end
