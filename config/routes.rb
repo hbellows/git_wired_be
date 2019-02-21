@@ -17,8 +17,3 @@ Rails.application.routes.draw do
 
 end
 
-
-# get 'api/v1/repositories'
-# get 'api/v1/repositories/:id'
-# get 'api/v1/respositories/:repository_id/projects'
-# get 'api/v1/repositories/:repository_id/projects/:id'

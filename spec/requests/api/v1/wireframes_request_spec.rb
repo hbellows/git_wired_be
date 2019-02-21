@@ -9,10 +9,12 @@ describe 'GET requests' do
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
         
         repository = user.repositories.create!(name: 'git_wired_be', github_id: '170214553')
-      
-        repository_id = repository.id
+        wireframe_1 = repository.wireframes.create!(name: "Wireframe 1", object: "Description 1")
+        wireframe_2 = repository.wireframes.create!(name: "Wireframe 2", object: "Description 2")
+        
+        id = repository.id
 
-        get "/api/v1/repositories/#{repository_id}/wireframes"
+        get "/api/v1/repositories/#{id}/wireframes"
 
         expect(response.status).to eq(200)
 

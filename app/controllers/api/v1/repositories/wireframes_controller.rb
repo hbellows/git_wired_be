@@ -5,8 +5,12 @@ class Api::V1::Repositories::WireframesController < ApplicationController
   end
 
   private
+
+  def repository
+    @repository ||= current_user.repositories.find_by(id: params[:id])
+  end
   
   def wireframes
-    @wireframes ||= WireframeFinder.new(current_user)
+    @wireframes ||= WireframeFinder.new(current_user, repository)
   end
 end
