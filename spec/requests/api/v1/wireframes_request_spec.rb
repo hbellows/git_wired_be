@@ -64,18 +64,17 @@ describe 'GET requests' do
 
         expect(returned_wireframe).to be_a(Hash)
         expect(returned_wireframe).to have_key(:data)
-        expect(returned_wireframe[:data]).to have_key(:id)
-        expect(returned_wireframe[:data][:id]).to eq(repository.name)
+        expect(returned_wireframe[:data]).to have_key(:repo)
+        expect(returned_wireframe[:data][:repo]).to eq(repository.name)
         expect(returned_wireframe[:data]).to have_key(:attributes)
-        expect(returned_wireframe[:data][:attributes]).to have_key(:wireframe)
-        expect(returned_wireframe[:data][:attributes][:wireframe]).to have_key(:id)
-        expect(returned_wireframe[:data][:attributes][:wireframe][:id]).to equal(wireframe_2.id)
-        expect(returned_wireframe[:data][:attributes][:wireframe]).to have_key(:name)
-        expect(returned_wireframe[:data][:attributes][:wireframe][:name]).to eq(wireframe_2.name)
-        expect(returned_wireframe[:data][:attributes][:wireframe]).to have_key(:object)
-        expect(returned_wireframe[:data][:attributes][:wireframe][:object]).to eq(wireframe_2.object)
-        expect(returned_wireframe[:data][:attributes][:wireframe]).to have_key(:created_at)
-        expect(returned_wireframe[:data][:attributes][:wireframe]).to have_key(:updated_at)
+        expect(returned_wireframe[:data][:attributes]).to have_key(:id)
+        expect(returned_wireframe[:data][:attributes][:id]).to equal(wireframe_2.id)
+        expect(returned_wireframe[:data][:attributes]).to have_key(:name)
+        expect(returned_wireframe[:data][:attributes][:name]).to eq(wireframe_2.name)
+        expect(returned_wireframe[:data][:attributes]).to have_key(:object)
+        expect(returned_wireframe[:data][:attributes][:object]).to eq(wireframe_2.object)
+        expect(returned_wireframe[:data][:attributes]).to have_key(:created_at)
+        expect(returned_wireframe[:data][:attributes]).to have_key(:updated_at)
     end
   end
 end
