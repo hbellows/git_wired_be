@@ -18,21 +18,29 @@ describe 'GET requests' do
         expect(response.status).to eq(200)
         
         returned_wireframes = JSON.parse(response.body, symbolize_names: true)
-        binding.pry
         
         expect(returned_wireframes).to be_a(Hash)
         expect(returned_wireframes).to have_key(:data)
         expect(returned_wireframes[:data]).to have_key(:id)
         expect(returned_wireframes[:data][:id]).to eq(repository.name)
         expect(returned_wireframes[:data]).to have_key(:attributes)
-        expect(returned_wireframes[:data][:attributes]).to have_key(:repository_wireframes)
-        expect(returned_wireframes[:data][:attributes][:repository_wireframes]).to be_a(Array)
-        expect(returned_wireframes[:data][:attributes][:repository_wireframes][0]).to have_key(:project_id)
-        expect(returned_wireframes[:data][:attributes][:repository_wireframes][0]).to have_key(:name)
-        expect(returned_wireframes[:data][:attributes][:repository_wireframes][0]).to have_key(:state)
-        expect(returned_wireframes[:data][:attributes][:repository_wireframes][0]).to have_key(:creator)
-        expect(returned_wireframes[:data][:attributes][:repository_wireframes][0]).to have_key(:created_at)
-        expect(returned_wireframes[:data][:attributes][:repository_wireframes][0]).to have_key(:updated_at)
+        expect(returned_wireframes[:data][:attributes]).to have_key(:wireframes)
+        expect(returned_wireframes[:data][:attributes][:wireframes]).to be_a(Array)
+        expect(returned_wireframes[:data][:attributes][:wireframes][0]).to have_key(:id)
+        expect(returned_wireframes[:data][:attributes][:wireframes][0][:id]).to equal(wireframe_1.id)
+        expect(returned_wireframes[:data][:attributes][:wireframes][0]).to have_key(:name)
+        expect(returned_wireframes[:data][:attributes][:wireframes][0][:name]).to eq(wireframe_1.name)
+        expect(returned_wireframes[:data][:attributes][:wireframes][0]).to have_key(:object)
+        expect(returned_wireframes[:data][:attributes][:wireframes][0][:object]).to eq(wireframe_1.object)
+        expect(returned_wireframes[:data][:attributes][:wireframes][0]).to have_key(:created_at)
+        expect(returned_wireframes[:data][:attributes][:wireframes][0]).to have_key(:updated_at)
+        expect(returned_wireframes[:data][:attributes][:wireframes][1][:id]).to equal(wireframe_2.id)
+        expect(returned_wireframes[:data][:attributes][:wireframes][1]).to have_key(:name)
+        expect(returned_wireframes[:data][:attributes][:wireframes][1][:name]).to eq(wireframe_2.name)
+        expect(returned_wireframes[:data][:attributes][:wireframes][1]).to have_key(:object)
+        expect(returned_wireframes[:data][:attributes][:wireframes][1][:object]).to eq(wireframe_2.object)
+        expect(returned_wireframes[:data][:attributes][:wireframes][1]).to have_key(:created_at)
+        expect(returned_wireframes[:data][:attributes][:wireframes][1]).to have_key(:updated_at)
       # end
     end
   end
