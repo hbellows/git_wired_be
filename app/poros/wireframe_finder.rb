@@ -15,4 +15,8 @@ class WireframeFinder
     end
   end
 
+  def wireframe(wireframe_id)
+    @repository.wireframes.find(wireframe_id)
+  end
+
 end

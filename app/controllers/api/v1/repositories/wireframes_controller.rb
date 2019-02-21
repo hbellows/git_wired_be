@@ -10,20 +10,23 @@ class Api::V1::Repositories::WireframesController < ApplicationController
     @wireframe ||= repository.wireframes.find_or_create_by(name: params[:name], object: params[:object])
     render json: { message: "Wireframe successfully created" }, status: 200
   end
+  
+  def show
+    json = WireframeSerializer.new(wireframe).serialized_json
+    hash = JSON.parse(json)
+    hash["data"]["repo"] = repository.name
+    render json: hash 
+  end
 
   private
 
   def repository
     @repository ||= current_user.repositories.find_by(id: params[:repository_id])
   end
-  
+
   def wireframes
     @wireframes ||= WireframeFinder.new(current_user, repository)
   end
-
-  # def wireframe
-  #   @wireframe ||= repository.wireframes.find_or_create_by(name: params[:name], object: params[:object])
-  # end
 
   def validate_name
     render json: nil, status: 401 if params[:name].nil? 
@@ -33,7 +36,8 @@ class Api::V1::Repositories::WireframesController < ApplicationController
     render json: nil, status: 401 if params[:object].nil? 
   end
 
-  # def wireframe_params
-  #   params.permit(:name, :object)
-  # end
+  def wireframe
+    finder = WireframeFinder.new(current_user, repository)
+    @wireframe ||= finder.wireframe(params[:id])
+  end
 end
