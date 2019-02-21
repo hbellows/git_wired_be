@@ -22,7 +22,6 @@ class IssueFinder
   private
 
   def github_service
-    binding.pry 
     @github_service ||= GithubService.new(@username.token)
   end
 end
