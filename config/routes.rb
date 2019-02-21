@@ -15,6 +15,14 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :repositories, module: :repositories, only: %i[index show] do
+        resources :projects, only: %i[index show]
+      end
+    end
+  end
+
 end
 
 
