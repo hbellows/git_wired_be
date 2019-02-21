@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :repositories, module: :repositories, only: %i[index show] do
         resources :projects, only: %i[index show]
-        resources :wireframes, only: %i[index]
+        resources :wireframes, only: %i[index show]
       end
     end
   end
